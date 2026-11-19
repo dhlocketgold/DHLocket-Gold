@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>DHLocket — Mở Khóa Đặc Quyền Locket Gold & VIP</title>
+    <title>DHLocket — Mở Khóa Đặc Quyền Locket Gold &amp; VIP</title>
 
     <!-- Google Fonts: Plus Jakarta Sans, Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,9 +48,6 @@
            ================================================================= */
         :root {
             --bg-primary: #040D1A;
-            --amber-glow: rgba(56, 189, 248, 0.24);
-            --copper-glow: rgba(14, 165, 233, 0.18);
-            --violet-glow: rgba(34, 211, 238, 0.14);
             --cursor-x: 50vw;
             --cursor-y: 30vh;
         }
@@ -68,7 +65,7 @@
             position: relative;
         }
 
-        /* Lớp nền Mesh Gradient động + Họa tiết lưới chấm công nghệ xanh biển */
+        /* 1. Dòng chảy nền đại dương biến thiên (oceanCurrentFlow) */
         .cosmic-backdrop {
             position: fixed;
             inset: 0;
@@ -84,18 +81,12 @@
         }
 
         @keyframes oceanCurrentFlow {
-            0% {
-                background-position: 0% 0%;
-            }
-            50% {
-                background-position: 60% 35%;
-            }
-            100% {
-                background-position: 100% 80%;
-            }
+            0% { background-position: 0% 0%; }
+            50% { background-position: 60% 35%; }
+            100% { background-position: 100% 80%; }
         }
 
-        /* Ánh sáng Spotlight theo chuyển động chuột toàn màn hình */
+        /* 2. Ánh sáng Spotlight theo chuyển động chuột toàn màn hình */
         .cursor-spotlight {
             position: fixed;
             inset: 0;
@@ -103,14 +94,14 @@
             pointer-events: none;
             background: radial-gradient(
                 620px circle at var(--cursor-x) var(--cursor-y),
-                rgba(56, 189, 248, 0.13),
+                rgba(56, 189, 248, 0.14),
                 rgba(34, 211, 238, 0.05) 35%,
                 transparent 70%
             );
             transition: opacity 0.3s ease;
         }
 
-        /* Sóng ánh sáng đại dương uốn lượn tầng sâu */
+        /* 3. Sóng ánh sáng đại dương uốn lượn tầng sâu xoay chuyển */
         .ocean-wave-layer {
             position: fixed;
             inset: -25%;
@@ -132,24 +123,18 @@
         }
 
         @keyframes spinOceanCaustics {
-            0% {
-                transform: rotate(0deg) scale(1.05);
-            }
-            50% {
-                transform: rotate(180deg) scale(1.15);
-            }
-            100% {
-                transform: rotate(360deg) scale(1.05);
-            }
+            0% { transform: rotate(0deg) scale(1.05); }
+            50% { transform: rotate(180deg) scale(1.15); }
+            100% { transform: rotate(360deg) scale(1.05); }
         }
 
-        /* Lưới chấm tọa độ công nghệ trôi nhẹ */
+        /* 4. Lưới chấm tọa độ công nghệ trôi nhẹ */
         .tech-dot-grid {
             position: fixed;
             inset: 0;
             z-index: 0;
             pointer-events: none;
-            background-image: radial-gradient(rgba(56, 189, 248, 0.2) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(56, 189, 248, 0.22) 1px, transparent 1px);
             background-size: 28px 28px;
             mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, #000 40%, transparent 100%);
             -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, #000 40%, transparent 100%);
@@ -157,15 +142,11 @@
         }
 
         @keyframes driftTechGrid {
-            0% {
-                background-position: 0px 0px;
-            }
-            100% {
-                background-position: 28px 56px;
-            }
+            0% { background-position: 0px 0px; }
+            100% { background-position: 28px 56px; }
         }
 
-        /* Hạt ánh sáng / bong bóng biển sâu bay lên */
+        /* 5. Hạt ánh sáng / bong bóng biển sâu bay lên */
         .ocean-particles {
             position: fixed;
             inset: 0;
@@ -178,8 +159,8 @@
             position: absolute;
             bottom: -40px;
             border-radius: 9999px;
-            background: radial-gradient(circle at 30% 30%, rgba(224, 242, 254, 0.9), rgba(56, 189, 248, 0.25) 60%, transparent 100%);
-            box-shadow: 0 0 12px rgba(56, 189, 248, 0.45);
+            background: radial-gradient(circle at 30% 30%, rgba(224, 242, 254, 0.9), rgba(56, 189, 248, 0.28) 60%, transparent 100%);
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
             opacity: 0;
             animation: riseOceanBubble var(--dur, 14s) ease-in-out infinite;
             animation-delay: var(--delay, 0s);
@@ -205,7 +186,7 @@
             }
         }
 
-        /* Dải cực quang đại dương (Aurora Orbs) chuyển động nhẹ */
+        /* Dải cực quang đại dương (Aurora Orbs) */
         .aurora-orb {
             position: fixed;
             border-radius: 9999px;
@@ -242,23 +223,17 @@
         }
 
         @keyframes driftAurora {
-            0% {
-                transform: translate3d(0, 0, 0) scale(1);
-            }
-            50% {
-                transform: translate3d(38px, -30px, 0) scale(1.1);
-            }
-            100% {
-                transform: translate3d(-30px, 24px, 0) scale(0.95);
-            }
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            50% { transform: translate3d(38px, -30px, 0) scale(1.1); }
+            100% { transform: translate3d(-30px, 24px, 0) scale(0.95); }
         }
 
-        /* Khối kính mờ viền ánh xanh đại dương + Hiệu ứng phản chiếu chuột 3D */
+        /* 6. Khối kính mờ viền ánh xanh đại dương + Thẻ nghiêng 3D (Tilt Card) */
         .lux-glass {
             background: linear-gradient(155deg, rgba(12, 34, 64, 0.78) 0%, rgba(7, 23, 46, 0.88) 100%);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.22);
             box-shadow: 0 20px 50px -20px rgba(2, 12, 27, 0.9), inset 0 1px 0 0 rgba(186, 230, 253, 0.1);
             position: relative;
         }
@@ -296,8 +271,8 @@
         }
 
         .lux-glass-hover:hover {
-            border-color: rgba(56, 189, 248, 0.55);
-            box-shadow: 0 25px 60px -15px rgba(14, 165, 233, 0.3), inset 0 1px 0 0 rgba(125, 211, 252, 0.32);
+            border-color: rgba(56, 189, 248, 0.58);
+            box-shadow: 0 25px 60px -15px rgba(14, 165, 233, 0.32), inset 0 1px 0 0 rgba(125, 211, 252, 0.35);
         }
 
         /* Thẻ VIP Vĩnh Viễn nổi bật xanh ngọc - cobalt + viền thở nhịp sinh học */
@@ -315,17 +290,17 @@
                 box-shadow: 0 0 50px -12px rgba(14, 165, 233, 0.4), inset 0 1px 0 0 rgba(186, 230, 253, 0.3);
             }
             50% {
-                box-shadow: 0 0 72px -8px rgba(34, 211, 238, 0.58), inset 0 1px 0 0 rgba(224, 242, 254, 0.45);
+                box-shadow: 0 0 72px -8px rgba(34, 211, 238, 0.6), inset 0 1px 0 0 rgba(224, 242, 254, 0.48);
             }
         }
 
         .vip-card-glow:hover {
-            box-shadow: 0 0 78px -6px rgba(56, 189, 248, 0.65), inset 0 1px 0 0 rgba(186, 230, 253, 0.5);
+            box-shadow: 0 0 78px -6px rgba(56, 189, 248, 0.68), inset 0 1px 0 0 rgba(186, 230, 253, 0.5);
         }
 
         /* Thanh điều hướng kính mờ */
         .nav-blur {
-            background: rgba(4, 13, 26, 0.82);
+            background: rgba(4, 13, 26, 0.84);
             backdrop-filter: blur(22px);
             -webkit-backdrop-filter: blur(22px);
             border-bottom: 1px solid rgba(56, 189, 248, 0.16);
@@ -341,29 +316,21 @@
         }
 
         @keyframes liquidTitleFlow {
-            0% {
-                background-position: 0% center;
-            }
-            100% {
-                background-position: 220% center;
-            }
+            0% { background-position: 0% center; }
+            100% { background-position: 220% center; }
         }
 
-        /* Hiệu ứng bay bổng nhẹ cho badge Hero */
+        /* Hiệu ứng bay bổng nhẹ cho badge & mockup Hero */
         .float-slow {
             animation: floatBadge 4.8s ease-in-out infinite;
         }
 
         @keyframes floatBadge {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-6px);
-            }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-7px); }
         }
 
-        /* Nút bấm ánh xanh biển + Tia sáng quét (Shimmer Sweep) */
+        /* 7. Nút bấm ánh xanh biển + Tia sáng quét (buttonShimmer) */
         .btn-amber-lux {
             background: linear-gradient(135deg, #38BDF8 0%, #0EA5E9 55%, #0284C7 100%);
             color: #040D1A;
@@ -385,21 +352,17 @@
             background: linear-gradient(
                 105deg,
                 transparent 20%,
-                rgba(255, 255, 255, 0.55) 50%,
+                rgba(255, 255, 255, 0.58) 50%,
                 transparent 80%
             );
             transform: skewX(-20deg);
-            animation: buttonShimmer 4.2s ease-in-out infinite;
+            animation: buttonShimmer 4s ease-in-out infinite;
             pointer-events: none;
         }
 
         @keyframes buttonShimmer {
-            0%, 62% {
-                left: -120%;
-            }
-            100% {
-                left: 150%;
-            }
+            0%, 60% { left: -120%; }
+            100% { left: 150%; }
         }
 
         .btn-amber-lux:hover {
@@ -412,7 +375,7 @@
             transform: scale(0.98);
         }
 
-        /* Hiệu ứng xuất hiện mượt mà khi cuộn trang (Scroll Reveal) */
+        /* 8. Hiệu ứng xuất hiện mượt mà khi cuộn trang (Scroll Reveal) */
         .reveal-up {
             opacity: 0;
             transform: translateY(28px) scale(0.985);
@@ -425,12 +388,12 @@
             transform: translateY(0) scale(1);
         }
 
-        /* Sóng Sonar Radar quanh bộ đếm ngược 3 phút */
+        /* 9. Sóng Sonar Radar quanh bộ đếm ngược 3 phút */
         .sonar-ring {
             position: absolute;
             inset: -6px;
             border-radius: 1.15rem;
-            border: 1.5px solid rgba(56, 189, 248, 0.55);
+            border: 1.5px solid rgba(56, 189, 248, 0.6);
             animation: sonarPing 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
             pointer-events: none;
         }
@@ -450,7 +413,7 @@
             }
         }
 
-        /* Hiệu ứng mở Modal mượt mà */
+        /* Hiệu ứng mở Modal & chuyển bước */
         @keyframes modalPopIn {
             0% {
                 opacity: 0;
@@ -489,7 +452,7 @@
         }
 
         .faq-card.open .faq-body {
-            max-height: 240px;
+            max-height: 260px;
             padding-top: 0.75rem;
             padding-bottom: 1.25rem;
         }
@@ -516,19 +479,10 @@
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 7px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #040D1A;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #13315C;
-            border-radius: 9999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #38BDF8;
-        }
+        ::-webkit-scrollbar { width: 7px; }
+        ::-webkit-scrollbar-track { background: #040D1A; }
+        ::-webkit-scrollbar-thumb { background: #13315C; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #38BDF8; }
     </style>
 </head>
 <body class="antialiased selection:bg-sky-400 selection:text-obsidian-950">
@@ -544,7 +498,7 @@
     <div class="aurora-orb aurora-orb-3"></div>
 
     <!-- =====================================================================
-         1. HEADER / THANH ĐIỀU HƯỚNG
+         1. THANH ĐIỀU HƯỚNG CỐ ĐỊNH (NAVBAR - KHÔNG HIỂN THỊ SĐT ADMIN)
          ===================================================================== -->
     <header class="fixed top-0 left-0 right-0 z-40 nav-blur">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
@@ -565,9 +519,9 @@
 
             <!-- Menu Desktop -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-sky-100/80">
-                <a href="#bento-features" class="hover:text-sky-300 transition-colors">Đặc quyền</a>
+                <a href="#intro" class="hover:text-sky-300 transition-colors">Giới thiệu</a>
                 <a href="#pricing" class="text-sky-400 font-bold hover:text-sky-300 transition-colors">Bảng giá</a>
-                <a href="#comparison" class="hover:text-sky-300 transition-colors">Đối chiếu gói</a>
+                <a href="#bento-features" class="hover:text-sky-300 transition-colors">Quyền lợi</a>
                 <a href="#faq" class="hover:text-sky-300 transition-colors">Hỏi đáp</a>
             </nav>
 
@@ -575,7 +529,7 @@
             <div class="flex items-center gap-3">
                 <span class="hidden lg:inline-flex items-center gap-2 text-xs font-medium text-cyan-300 bg-cyan-500/10 border border-cyan-400/25 px-3 py-1.5 rounded-full">
                     <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                    VietQR 24/7
+                    Hoạt động 24/7
                 </span>
                 <a href="#pricing" class="btn-amber-lux text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-xl">
                     Nâng cấp ngay
@@ -589,113 +543,244 @@
          ===================================================================== -->
     <main class="relative z-10 pt-28 sm:pt-36 pb-24">
 
-        <!-- 2. HERO SECTION ĐỘC BẢN -->
-        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-            <div class="text-center max-w-4xl mx-auto">
-                <!-- Pill Badge -->
-                <div class="float-slow reveal-up inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full lux-glass border-sky-400/35 text-xs sm:text-sm font-medium text-sky-300 mb-7">
-                    <span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span>
-                    <span>Phiên bản DHLocket Ocean 2026 — Hỗ trợ cả iOS &amp; Android</span>
+        <!-- =================================================================
+             2. HERO SECTION & MOCKUP GIAO DIỆN LOCKET GOLD TRỰC QUAN
+             ================================================================= -->
+        <section id="intro" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 scroll-mt-28">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Cột nội dung bên trái -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="float-slow reveal-up inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full lux-glass border-sky-400/35 text-xs sm:text-sm font-medium text-sky-300 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                        <span>Hệ thống DHLocket Gold 2026 • Hoạt động 24/7 (iOS &amp; Android)</span>
+                    </div>
+
+                    <h1 class="reveal-up font-display font-extrabold text-4xl sm:text-5xl lg:text-[58px] tracking-tight leading-[1.12] text-white mb-6" style="--reveal-delay: 80ms;">
+                        Mở Khóa Toàn Bộ <br class="hidden sm:inline">
+                        <span class="text-amber-metallic">Locket Gold &amp; VIP</span> <br class="hidden sm:inline">
+                        Chỉ Trong Vài Phút
+                    </h1>
+
+                    <p class="reveal-up max-w-2xl mx-auto lg:mx-0 text-sky-100/75 text-base sm:text-lg leading-relaxed mb-9" style="--reveal-delay: 160ms;">
+                        Tải ảnh và video HD trực tiếp từ thư viện không mờ, quay video 15s–30s sắc nét, sở hữu huy hiệu Gold danh giá, ẩn thông báo chụp màn hình và bảo mật tuyệt đối không cần mật khẩu.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="reveal-up flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4" style="--reveal-delay: 240ms;">
+                        <a href="#pricing" class="w-full sm:w-auto btn-amber-lux text-base px-8 py-4 rounded-2xl flex items-center justify-center gap-2.5">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            <span>Xem bảng giá nâng cấp</span>
+                        </a>
+                        <a href="#bento-features" class="w-full sm:w-auto lux-glass hover:border-sky-400/45 text-white font-semibold text-base px-8 py-4 rounded-2xl flex items-center justify-center gap-2 transition-all">
+                            <span>Xem đặc quyền VIP</span>
+                        </a>
+                    </div>
+
+                    <!-- Chỉ số tin cậy nhanh -->
+                    <div class="reveal-up grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 mt-10 pt-8 border-t border-sky-400/15" style="--reveal-delay: 320ms;">
+                        <div>
+                            <strong class="font-display font-extrabold text-xl sm:text-2xl text-white block">15.800+</strong>
+                            <span class="text-xs text-sky-200/65">Tài khoản kích hoạt</span>
+                        </div>
+                        <div>
+                            <strong class="font-display font-extrabold text-xl sm:text-2xl text-sky-300 block">100%</strong>
+                            <span class="text-xs text-sky-200/65">Không cần mật khẩu</span>
+                        </div>
+                        <div>
+                            <strong class="font-display font-extrabold text-xl sm:text-2xl text-cyan-300 block">24/7</strong>
+                            <span class="text-xs text-sky-200/65">VietQR tự động</span>
+                        </div>
+                    </div>
                 </div>
 
-                <h1 class="reveal-up font-display font-extrabold text-4xl sm:text-6xl lg:text-[64px] tracking-tight leading-[1.1] text-white mb-6" style="--reveal-delay: 80ms;">
-                    Biến Locket thành không gian <br class="hidden sm:inline">
-                    <span class="text-amber-metallic">Sáng Tạo Không Giới Hạn</span>
-                </h1>
+                <!-- Cột phải: Thẻ Mockup giao diện Locket Gold trực quan -->
+                <div class="lg:col-span-5 reveal-up" style="--reveal-delay: 180ms;">
+                    <div class="tilt-card float-slow max-w-sm mx-auto lux-glass rounded-[2.25rem] p-5 sm:p-6 border-sky-400/35 shadow-2xl relative">
+                        <!-- Thanh trạng thái giả lập -->
+                        <div class="flex items-center justify-between mb-4 px-1">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                                <span class="text-xs font-mono font-bold text-sky-300">LOCKET GOLD ACTIVE</span>
+                            </div>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-gradient-to-r from-sky-300 to-cyan-300 text-obsidian-950">
+                                VIP 4K
+                            </span>
+                        </div>
 
-                <p class="reveal-up max-w-2xl mx-auto text-sky-100/75 text-base sm:text-lg leading-relaxed mb-10" style="--reveal-delay: 160ms;">
-                    Đăng ảnh sắc nét trực tiếp từ thư viện, quay video mượt mà 60fps lên đến 15 giây, sở hữu huy hiệu Locket Gold danh giá và loại bỏ hoàn toàn quảng cáo.
-                </p>
+                        <!-- Khung ảnh Widget Locket mô phỏng -->
+                        <div class="relative rounded-3xl overflow-hidden aspect-square bg-gradient-to-br from-sky-900 via-obsidian-800 to-cyan-950 border border-sky-400/30 p-5 flex flex-col justify-between">
+                            <!-- Họa tiết sóng ánh sáng bên trong widget -->
+                            <div class="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-sky-400/25 blur-2xl pointer-events-none"></div>
+                            <div class="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-cyan-400/20 blur-2xl pointer-events-none"></div>
 
-                <!-- CTA Buttons -->
-                <div class="reveal-up flex flex-col sm:flex-row items-center justify-center gap-4" style="--reveal-delay: 240ms;">
-                    <a href="#pricing" class="w-full sm:w-auto btn-amber-lux text-base px-8 py-4 rounded-2xl flex items-center justify-center gap-2.5">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                        <span>Chọn gói nâng cấp ngay</span>
-                    </a>
-                    <a href="#bento-features" class="w-full sm:w-auto lux-glass hover:border-sky-400/45 text-white font-semibold text-base px-8 py-4 rounded-2xl flex items-center justify-center gap-2 transition-all">
-                        <span>Khám phá đặc quyền</span>
-                    </a>
+                            <div class="relative z-10 flex items-center justify-between">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-sky-400 to-cyan-300 p-0.5">
+                                        <div class="w-full h-full rounded-full bg-obsidian-900 flex items-center justify-center text-xs font-extrabold text-sky-300">
+                                            DH
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-white flex items-center gap-1">
+                                            @duchai.vip
+                                            <svg class="w-3.5 h-3.5 text-sky-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                                        </span>
+                                        <span class="text-[10px] text-sky-200/70 block">Vừa tải từ Album • 4K HDR</span>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] font-mono bg-black/40 border border-sky-400/30 px-2.5 py-1 rounded-full text-cyan-300">
+                                    00:30s
+                                </span>
+                            </div>
+
+                            <!-- Trung tâm hiển thị tính năng -->
+                            <div class="relative z-10 my-auto text-center py-4">
+                                <div class="w-16 h-16 mx-auto rounded-2xl bg-sky-400/20 border border-sky-300/40 flex items-center justify-center text-sky-300 mb-3 shadow-lg shadow-sky-500/20">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                                        <rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>
+                                    </svg>
+                                </div>
+                                <p class="font-display font-bold text-base text-white">Đăng ảnh &amp; Video từ Thư viện</p>
+                                <p class="text-xs text-sky-200/75 mt-1">Không nén mờ • Không giới hạn lượt đăng</p>
+                            </div>
+
+                            <!-- Caption bar mô phỏng -->
+                            <div class="relative z-10 bg-obsidian-950/80 backdrop-blur-md border border-sky-400/25 rounded-2xl px-4 py-2.5 flex items-center justify-between">
+                                <span class="text-xs text-sky-100 font-medium">✨ Huy hiệu Gold + Ẩn chụp màn hình</span>
+                                <span class="text-xs font-bold text-sky-400">ON</span>
+                            </div>
+                        </div>
+
+                        <!-- Thanh điều khiển nhanh dưới mockup -->
+                        <div class="mt-4 grid grid-cols-3 gap-2 text-center text-[11px]">
+                            <div class="p-2.5 rounded-2xl bg-sky-500/10 border border-sky-400/20 text-sky-200 font-semibold">
+                                Thư viện 4K
+                            </div>
+                            <div class="p-2.5 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 text-cyan-200 font-semibold">
+                                Video 30s
+                            </div>
+                            <div class="p-2.5 rounded-2xl bg-blue-500/10 border border-blue-400/20 text-sky-200 font-semibold">
+                                No Ads
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- 3. BENTO GRID BẤT ĐỐI XỨNG (ĐẶC QUYỀN NỔI BẬT) -->
-            <div id="bento-features" class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-5 mt-16 scroll-mt-24">
-                <!-- Ô lớn bên trái -->
-                <div class="reveal-up tilt-card md:col-span-7 lux-glass rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden" style="--reveal-delay: 60ms;">
+        <!-- =================================================================
+             3. KHU VỰC BENTO GRID CÁC ĐẶC QUYỀN NỔI BẬT (6 ĐẶC QUYỀN)
+             ================================================================= -->
+        <section id="bento-features" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 scroll-mt-24">
+            <div class="reveal-up text-center max-w-2xl mx-auto mb-12">
+                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-widest bg-sky-500/15 text-sky-300 border border-sky-400/35 mb-3">
+                    Đặc Quyền Nổi Bật
+                </span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white">
+                    Nâng tầm trải nghiệm Locket của bạn
+                </h2>
+                <p class="text-sky-100/70 text-sm sm:text-base mt-2">
+                    Mở khóa toàn bộ tính năng cao cấp chỉ có trên phiên bản DHLocket Gold &amp; VIP
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-5">
+                <!-- 1. Tải ảnh/video từ thư viện không mờ (Ô lớn 7 cột) -->
+                <div class="reveal-up tilt-card md:col-span-7 lux-glass rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden" style="--reveal-delay: 50ms;">
                     <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-sky-500/15 rounded-full blur-2xl pointer-events-none"></div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-400/35">Tính năng cốt lõi</span>
-                        <div class="w-10 h-10 rounded-xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-sky-400">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-400/35">Chất lượng gốc 4K</span>
+                        <div class="w-11 h-11 rounded-2xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-sky-400">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>
                             </svg>
                         </div>
                     </div>
                     <div>
-                        <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-2">Tải ảnh từ Thư viện chất lượng gốc 4K</h3>
+                        <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-2">Tải ảnh &amp; video từ thư viện không mờ</h3>
                         <p class="text-sm text-sky-100/75 leading-relaxed">
-                            Không còn bị giới hạn chỉ chụp trực tiếp qua camera. Chọn bất kỳ bức ảnh kỷ niệm nào từ Album của bạn, giữ nguyên màu sắc và độ phân giải sắc nét khi hiển thị trên Widget bạn bè.
+                            Chọn trực tiếp ảnh hoặc video có sẵn từ Album điện thoại để đăng lên Widget bạn bè. Giữ nguyên độ sắc nét chuẩn HD/4K, không bị bóp dung lượng hay mờ nhòe.
                         </p>
                     </div>
                 </div>
 
-                <!-- Ô phải trên -->
-                <div class="reveal-up tilt-card md:col-span-5 lux-glass rounded-3xl p-6 sm:p-8 flex flex-col justify-between" style="--reveal-delay: 140ms;">
+                <!-- 2. Quay video 15s - 30s (Ô 5 cột) -->
+                <div class="reveal-up tilt-card md:col-span-5 lux-glass rounded-3xl p-6 sm:p-8 flex flex-col justify-between" style="--reveal-delay: 110ms;">
                     <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-400/35">Video HD</span>
-                        <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-400/35">60fps Mượt Mà</span>
+                        <div class="w-11 h-11 rounded-2xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>
                             </svg>
                         </div>
                     </div>
                     <div>
-                        <h3 class="font-display font-bold text-xl text-white mb-2">Quay &amp; Đăng Video 15 giây</h3>
+                        <h3 class="font-display font-bold text-xl text-white mb-2">Quay &amp; đăng Video 15s – 30s</h3>
                         <p class="text-sm text-sky-100/75 leading-relaxed">
-                            Chia sẻ trọn vẹn khoảnh khắc sống động với tốc độ khung hình 60fps mượt mà, âm thanh trong trẻo.
+                            Ghi lại trọn vẹn khoảnh khắc đáng nhớ với thời lượng video dài gấp nhiều lần bản thường cùng âm thanh trong trẻo.
                         </p>
                     </div>
                 </div>
 
-                <!-- Ô dưới 1 -->
-                <div class="reveal-up tilt-card md:col-span-4 lux-glass rounded-3xl p-6 flex items-start gap-4" style="--reveal-delay: 180ms;">
-                    <div class="w-11 h-11 rounded-2xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-sky-400 shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <!-- 3. Huy hiệu Gold & tùy biến icon (Ô 6 cột) -->
+                <div class="reveal-up tilt-card md:col-span-6 lux-glass rounded-3xl p-6 sm:p-7 flex items-start gap-4" style="--reveal-delay: 160ms;">
+                    <div class="w-12 h-12 rounded-2xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-sky-400 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                         </svg>
                     </div>
                     <div>
-                        <h4 class="font-display font-bold text-base text-white">Huy hiệu Locket Gold</h4>
-                        <p class="text-xs text-sky-200/65 mt-1 leading-relaxed">Biểu tượng đặc quyền sang trọng &amp; khung viền nổi bật.</p>
+                        <h4 class="font-display font-bold text-lg text-white">Huy hiệu Gold &amp; tùy biến Icon</h4>
+                        <p class="text-sm text-sky-200/70 mt-1.5 leading-relaxed">
+                            Nổi bật với huy hiệu Locket Gold sang trọng, mở khóa bộ sưu tập 20+ biểu tượng ứng dụng và khung viền VIP độc quyền.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Ô dưới 2 -->
-                <div class="reveal-up tilt-card md:col-span-4 lux-glass rounded-3xl p-6 flex items-start gap-4" style="--reveal-delay: 240ms;">
-                    <div class="w-11 h-11 rounded-2xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300 shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <!-- 4. Ẩn thông báo chụp màn hình (Ô 6 cột) -->
+                <div class="reveal-up tilt-card md:col-span-6 lux-glass rounded-3xl p-6 sm:p-7 flex items-start gap-4" style="--reveal-delay: 210ms;">
+                    <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/>
                         </svg>
                     </div>
                     <div>
-                        <h4 class="font-display font-bold text-base text-white">An toàn tuyệt đối 100%</h4>
-                        <p class="text-xs text-sky-200/65 mt-1 leading-relaxed">Không cần Jailbreak hay Root máy, bảo vệ tài khoản trọn đời.</p>
+                        <h4 class="font-display font-bold text-lg text-white">Ẩn thông báo chụp màn hình</h4>
+                        <p class="text-sm text-sky-200/70 mt-1.5 leading-relaxed">
+                            Tự do lưu giữ những bức ảnh yêu thích của bạn bè mà không gửi thông báo làm phiền hay gây ngại ngùng.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Ô dưới 3 -->
-                <div class="reveal-up tilt-card md:col-span-4 lux-glass rounded-3xl p-6 flex items-start gap-4" style="--reveal-delay: 300ms;">
-                    <div class="w-11 h-11 rounded-2xl bg-blue-500/15 border border-blue-400/30 flex items-center justify-center text-sky-300 shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                <!-- 5. Không quảng cáo & mượt mà (Ô 6 cột) -->
+                <div class="reveal-up tilt-card md:col-span-6 lux-glass rounded-3xl p-6 sm:p-7 flex items-start gap-4" style="--reveal-delay: 260ms;">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-500/15 border border-blue-400/30 flex items-center justify-center text-sky-300 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                         </svg>
                     </div>
                     <div>
-                        <h4 class="font-display font-bold text-base text-white">Đồng bộ mọi thiết bị</h4>
-                        <p class="text-xs text-sky-200/65 mt-1 leading-relaxed">Đổi điện thoại mới vẫn giữ nguyên bản quyền theo tài khoản.</p>
+                        <h4 class="font-display font-bold text-lg text-white">Không quảng cáo &amp; siêu mượt mà</h4>
+                        <p class="text-sm text-sky-200/70 mt-1.5 leading-relaxed">
+                            Loại bỏ 100% quảng cáo chen ngang và watermark, tối ưu tốc độ tải Widget tức thì và tiết kiệm pin hơn.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 6. Bảo mật không cần mật khẩu (Ô 6 cột) -->
+                <div class="reveal-up tilt-card md:col-span-6 lux-glass rounded-3xl p-6 sm:p-7 flex items-start gap-4" style="--reveal-delay: 310ms;">
+                    <div class="w-12 h-12 rounded-2xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-sky-400 shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-lg text-white">Bảo mật tuyệt đối — Không cần mật khẩu</h4>
+                        <p class="text-sm text-sky-200/70 mt-1.5 leading-relaxed">
+                            Chỉ cần cung cấp Username hoặc Email Locket để kích hoạt gói. Không yêu cầu mật khẩu, không Jailbreak/Root máy.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -704,7 +789,7 @@
         <!-- =================================================================
              4. BẢNG GIÁ CHÍNH THỨC (#PRICING) — DÙNG THỬ 0Đ (1 NGÀY), 59K & 129K
              ================================================================= -->
-        <section id="pricing" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-20 scroll-mt-24">
+        <section id="pricing" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-20 scroll-mt-24">
             <div class="reveal-up text-center max-w-2xl mx-auto mb-14">
                 <span class="inline-block px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-widest bg-sky-500/15 text-sky-300 border border-sky-400/35 mb-3">
                     Bảng Giá Nâng Cấp
@@ -713,116 +798,24 @@
                     Chọn gói đặc quyền của bạn
                 </h2>
                 <p class="text-sky-100/75 text-sm sm:text-base">
-                    Trải nghiệm miễn phí 1 ngày khi liên hệ Admin qua Zalo, hoặc chọn gói 1 Năm / Vĩnh Viễn thanh toán VietQR tự động.
+                    Trải nghiệm miễn phí 1 ngày qua Zalo Admin, hoặc chọn Gói 1 Năm / Gói Vĩnh Viễn thanh toán VietQR tự động (hỗ trợ áp dụng mã giảm giá).
                 </p>
             </div>
 
             <!-- Grid 3 Cột Cân Đối -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 items-stretch">
 
-                <!-- GÓI 0: GÓI DÙNG THỬ (0Đ / 1 NGÀY — LIÊN HỆ ZALO ADMIN) -->
-                <div onclick="window.openTrialModal()"
+                <!-- GÓI 0: GÓI DÙNG THỬ 1 NGÀY (0Đ — MỞ TRỰC TIẾP ZALO ADMIN) -->
+                <div onclick="window.openTrialZalo(event)"
                      role="button"
                      tabindex="0"
                      style="--reveal-delay: 60ms;"
                      class="reveal-up tilt-card lux-glass lux-glass-hover rounded-3xl p-7 sm:p-8 flex flex-col justify-between relative group">
 
                     <div>
-                        <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-2">Tải ảnh từ Thư viện chất lượng gốc 4K</h3>
-                        <p class="text-sm text-sky-100/75 leading-relaxed">
-                            Không còn bị giới hạn chỉ chụp trực tiếp qua camera. Chọn bất kỳ bức ảnh kỷ niệm nào từ Album của bạn, giữ nguyên màu sắc và độ phân giải sắc nét khi hiển thị trên Widget bạn bè.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Ô phải trên -->
-                <div class="md:col-span-5 lux-glass rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-400/35">Video HD</span>
-                        <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="font-display font-bold text-xl text-white mb-2">Quay &amp; Đăng Video 15 giây</h3>
-                        <p class="text-sm text-sky-100/75 leading-relaxed">
-                            Chia sẻ trọn vẹn khoảnh khắc sống động với tốc độ khung hình 60fps mượt mà, âm thanh trong trẻo.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Ô dưới 1 -->
-                <div class="md:col-span-4 lux-glass rounded-3xl p-6 flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-2xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-sky-400 shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h4 class="font-display font-bold text-base text-white">Huy hiệu Locket Gold</h4>
-                        <p class="text-xs text-sky-200/65 mt-1 leading-relaxed">Biểu tượng đặc quyền sang trọng &amp; khung viền nổi bật.</p>
-                    </div>
-                </div>
-
-                <!-- Ô dưới 2 -->
-                <div class="md:col-span-4 lux-glass rounded-3xl p-6 flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-2xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300 shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h4 class="font-display font-bold text-base text-white">An toàn tuyệt đối 100%</h4>
-                        <p class="text-xs text-sky-200/65 mt-1 leading-relaxed">Không cần Jailbreak hay Root máy, bảo vệ tài khoản trọn đời.</p>
-                    </div>
-                </div>
-
-                <!-- Ô dưới 3 -->
-                <div class="md:col-span-4 lux-glass rounded-3xl p-6 flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-2xl bg-blue-500/15 border border-blue-400/30 flex items-center justify-center text-sky-300 shrink-0">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h4 class="font-display font-bold text-base text-white">Đồng bộ mọi thiết bị</h4>
-                        <p class="text-xs text-sky-200/65 mt-1 leading-relaxed">Đổi điện thoại mới vẫn giữ nguyên bản quyền theo tài khoản.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- =================================================================
-             4. BẢNG GIÁ CHÍNH THỨC (#PRICING) — DÙNG THỬ 0Đ (1 NGÀY), 59K & 129K
-             ================================================================= -->
-        <section id="pricing" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-20 scroll-mt-24">
-            <div class="text-center max-w-2xl mx-auto mb-14">
-                <span class="inline-block px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-widest bg-sky-500/15 text-sky-300 border border-sky-400/35 mb-3">
-                    Bảng Giá Nâng Cấp
-                </span>
-                <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white mb-4">
-                    Chọn gói đặc quyền của bạn
-                </h2>
-                <p class="text-sky-100/75 text-sm sm:text-base">
-                    Trải nghiệm miễn phí 1 ngày khi liên hệ Admin qua Zalo, hoặc chọn gói 1 Năm / Vĩnh Viễn thanh toán VietQR tự động.
-                </p>
-            </div>
-
-            <!-- Grid 3 Cột Cân Đối -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 items-stretch">
-
-                <!-- GÓI 0: GÓI DÙNG THỬ (0Đ / 1 NGÀY — LIÊN HỆ ZALO ADMIN) -->
-                <div onclick="window.openTrialModal()"
-                     role="button"
-                     tabindex="0"
-                     class="lux-glass lux-glass-hover rounded-3xl p-7 sm:p-8 flex flex-col justify-between relative group">
-
-                    <div>
                         <div class="flex items-center justify-between mb-5">
                             <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-400/35">
-                                Trải nghiệm • Trong 1 ngày
+                                Trải nghiệm • 1 Ngày
                             </span>
                             <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-400/25 flex items-center justify-center text-cyan-300">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -831,9 +824,9 @@
                             </div>
                         </div>
 
-                        <h3 class="font-display font-extrabold text-2xl text-white">Gói Dùng Thử</h3>
+                        <h3 class="font-display font-extrabold text-2xl text-white">Gói Dùng Thử 1 Ngày</h3>
                         <p class="text-sky-100/70 text-sm mt-2 leading-relaxed">
-                            Dùng thử miễn phí trong 1 ngày. Muốn dùng gói này hãy nhắn liên hệ Admin ở Zalo để được cấp quyền.
+                            Dùng thử miễn phí 0đ trong 24 giờ. Bấm liên hệ Zalo Admin để được cấp quyền trải nghiệm ngay.
                         </p>
 
                         <div class="my-6 pb-6 border-b border-sky-400/15">
@@ -841,39 +834,39 @@
                                 <span class="font-display font-extrabold text-4xl sm:text-5xl text-cyan-300">0đ</span>
                                 <span class="text-sky-200/65 text-sm font-medium">/ 1 ngày</span>
                             </div>
-                            <p class="text-xs text-cyan-300 mt-2 font-medium">Miễn phí 0.000đ • Liên hệ Zalo Admin để kích hoạt</p>
+                            <p class="text-xs text-cyan-300 mt-2 font-medium">Miễn phí 100% • Hỗ trợ cấp quyền qua Zalo Admin</p>
                         </div>
 
                         <ul class="space-y-3 text-sm text-sky-100/85 mb-8">
                             <li class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-cyan-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                <span>Thời hạn trải nghiệm: <strong>Trong 1 ngày</strong></span>
+                                <span>Thời hạn sử dụng: <strong>Trọn vẹn 1 ngày (24h)</strong></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-cyan-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                <span>Test tải ảnh từ thư viện &amp; video nhanh</span>
+                                <span>Test đăng ảnh từ thư viện &amp; quay video HD</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-cyan-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                <span>Cảm nhận trực tiếp giao diện &amp; tốc độ xử lý</span>
+                                <span>Trải nghiệm tốc độ xử lý &amp; giao diện thực tế</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-cyan-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                <span>Nhắn liên hệ <strong>Admin ở Zalo</strong> để nhận dùng thử</span>
+                                <span>Không cần mật khẩu tài khoản Locket</span>
                             </li>
                         </ul>
                     </div>
 
                     <button type="button"
-                            onclick="event.stopPropagation(); window.openTrialModal()"
+                            onclick="event.stopPropagation(); window.openTrialZalo(event)"
                             class="w-full py-4 px-5 rounded-2xl font-bold text-sm bg-cyan-500/15 hover:bg-cyan-400 hover:text-obsidian-950 text-cyan-200 border border-cyan-400/40 transition-all flex items-center justify-center gap-2 cursor-pointer">
-                        <span>Dùng Thử 0đ (1 Ngày) — Liên Hệ Zalo</span>
+                        <span>Liên hệ Zalo Admin</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
                     </button>
                 </div>
 
                 <!-- GÓI 1: GÓI 1 NĂM (59.000đ) -->
-                <div onclick="window.openCheckout('Gói 1 Năm', 59000, '59.000đ', 'Thời hạn: 1 Năm (365 ngày)', 'DHL1N')"
+                <div onclick="window.openCheckout('pro1y', 'Gói 1 Năm', 59000, 'Thời hạn: 1 Năm (365 ngày)', 'DHL1N')"
                      role="button"
                      tabindex="0"
                      style="--reveal-delay: 140ms;"
@@ -901,21 +894,21 @@
                                 <span class="font-display font-extrabold text-4xl sm:text-5xl text-white">59.000đ</span>
                                 <span class="text-sky-200/65 text-sm font-medium">/ 1 năm</span>
                             </div>
-                            <p class="text-xs text-sky-300 mt-2 font-medium">Chỉ chưa tới 5.000đ/tháng — Sử dụng trọn vẹn 12 tháng</p>
+                            <p class="text-xs text-sky-300 mt-2 font-medium">Hỗ trợ nhập mã giảm giá trực tiếp khi thanh toán</p>
                         </div>
 
                         <ul class="space-y-3 text-sm text-sky-100/90 mb-8">
                             <li class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-sky-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                <span>Đăng ảnh từ thư viện <strong>KHÔNG GIỚI HẠN</strong></span>
+                                <span>Đăng ảnh từ thư viện <strong>KHÔNG GIỚI HẠN (4K)</strong></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-sky-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                <span>Tải lên <strong>Video HD 1080p / 60fps</strong> (tối đa 15s)</span>
+                                <span>Quay &amp; tải lên <strong>Video HD 15s – 30s</strong> mượt mà</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-sky-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                                <span>Sở hữu <strong>Huy hiệu Locket Gold</strong> &amp; Viền nổi bật</span>
+                                <span>Sở hữu <strong>Huy hiệu Locket Gold</strong> &amp; Ẩn chụp màn hình</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-sky-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
@@ -929,7 +922,7 @@
                     </div>
 
                     <button type="button"
-                            onclick="event.stopPropagation(); window.openCheckout('Gói 1 Năm', 59000, '59.000đ', 'Thời hạn: 1 Năm (365 ngày)', 'DHL1N')"
+                            onclick="event.stopPropagation(); window.openCheckout('pro1y', 'Gói 1 Năm', 59000, 'Thời hạn: 1 Năm (365 ngày)', 'DHL1N')"
                             class="w-full py-4 px-5 rounded-2xl font-bold text-sm bg-white/10 group-hover:bg-sky-400 group-hover:text-obsidian-950 text-white border border-sky-400/35 transition-all flex items-center justify-center gap-2 cursor-pointer">
                         <span>Chọn Gói 1 Năm — 59.000đ</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
@@ -937,7 +930,7 @@
                 </div>
 
                 <!-- GÓI 2: GÓI VĨNH VIỄN (129.000đ — PHỔ BIẾN NHẤT / TIẾT KIỆM NHẤT) -->
-                <div onclick="window.openCheckout('Gói Vĩnh Viễn', 129000, '129.000đ', 'Thời hạn: Trọn đời vĩnh viễn', 'DHLVV')"
+                <div onclick="window.openCheckout('vip', 'Gói Vĩnh Viễn', 129000, 'Thời hạn: Trọn đời vĩnh viễn', 'DHLVV')"
                      role="button"
                      tabindex="0"
                      style="--reveal-delay: 220ms;"
@@ -1001,7 +994,7 @@
                     </div>
 
                     <button type="button"
-                            onclick="event.stopPropagation(); window.openCheckout('Gói Vĩnh Viễn', 129000, '129.000đ', 'Thời hạn: Trọn đời vĩnh viễn', 'DHLVV')"
+                            onclick="event.stopPropagation(); window.openCheckout('vip', 'Gói Vĩnh Viễn', 129000, 'Thời hạn: Trọn đời vĩnh viễn', 'DHLVV')"
                             class="w-full btn-amber-lux py-4 px-5 rounded-2xl text-sm flex items-center justify-center gap-2">
                         <span>Chọn Gói Vĩnh Viễn — 129.000đ</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
@@ -1012,15 +1005,15 @@
         </section>
 
         <!-- =================================================================
-             5. BẢNG ĐỐI CHIẾU QUYỀN LỢI 3 GÓI (0Đ / 1 NGÀY, 59K, 129K)
+             5. BẢNG SO SÁNH CHI TIẾT QUYỀN LỢI 3 GÓI
              ================================================================= -->
         <section id="comparison" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-24">
             <div class="reveal-up text-center mb-10">
                 <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white">
-                    Đối chiếu chi tiết quyền lợi
+                    So sánh chi tiết quyền lợi các gói
                 </h2>
                 <p class="text-sky-200/70 text-sm sm:text-base mt-2">
-                    So sánh trực quan giữa Gói Dùng Thử (0đ / 1 ngày), Gói 1 Năm (59.000đ) và Gói Vĩnh Viễn (129.000đ)
+                    Đối chiếu trực quan giữa Dùng thử 1 ngày (0đ), Gói 1 Năm (59.000đ) và Gói Vĩnh Viễn (129.000đ)
                 </p>
             </div>
 
@@ -1030,7 +1023,7 @@
                         <thead>
                             <tr class="border-b border-sky-400/15 bg-sky-500/[0.05]">
                                 <th class="py-5 px-5 text-sm font-bold text-sky-100 w-2/5">Tính năng &amp; Đặc quyền</th>
-                                <th class="py-5 px-3 text-sm font-bold text-cyan-300 text-center">Dùng Thử (0đ)</th>
+                                <th class="py-5 px-3 text-sm font-bold text-cyan-300 text-center">Dùng Thử 1 Ngày (0đ)</th>
                                 <th class="py-5 px-3 text-sm font-bold text-white text-center">Gói 1 Năm (59k)</th>
                                 <th class="py-5 px-3 text-sm font-extrabold text-sky-300 text-center bg-sky-500/10">Gói Vĩnh Viễn (129k)</th>
                             </tr>
@@ -1038,39 +1031,45 @@
                         <tbody class="divide-y divide-sky-400/10 text-sm">
                             <tr>
                                 <td class="py-4 px-5 font-medium text-sky-100/90">Thời hạn bản quyền</td>
-                                <td class="py-4 px-3 text-center text-cyan-300 font-semibold">Trong 1 ngày</td>
+                                <td class="py-4 px-3 text-center text-cyan-300 font-semibold">1 Ngày (24h)</td>
                                 <td class="py-4 px-3 text-center text-sky-100/80">1 Năm (365 ngày)</td>
                                 <td class="py-4 px-3 text-center font-extrabold text-sky-300 bg-sky-500/5">Trọn đời vĩnh viễn</td>
                             </tr>
                             <tr>
-                                <td class="py-4 px-5 font-medium text-sky-100/90">Cách kích hoạt gói</td>
-                                <td class="py-4 px-3 text-center text-cyan-200 text-xs sm:text-sm">Nhắn Admin qua Zalo</td>
+                                <td class="py-4 px-5 font-medium text-sky-100/90">Phương thức kích hoạt</td>
+                                <td class="py-4 px-3 text-center text-cyan-200 text-xs sm:text-sm">Zalo Admin</td>
                                 <td class="py-4 px-3 text-center text-sky-100/80 text-xs sm:text-sm">VietQR tự động</td>
                                 <td class="py-4 px-3 text-center text-sky-200 font-semibold bg-sky-500/5 text-xs sm:text-sm">VietQR ưu tiên</td>
                             </tr>
                             <tr>
-                                <td class="py-4 px-5 font-medium text-sky-100/90">Đăng ảnh từ thư viện</td>
-                                <td class="py-4 px-3 text-center text-sky-200/80">Dùng thử 1 ngày</td>
+                                <td class="py-4 px-5 font-medium text-sky-100/90">Tải ảnh từ thư viện không mờ</td>
+                                <td class="py-4 px-3 text-center text-sky-200/80">Có (trong 1 ngày)</td>
                                 <td class="py-4 px-3 text-center font-semibold text-white">Không giới hạn (4K)</td>
                                 <td class="py-4 px-3 text-center font-bold text-sky-300 bg-sky-500/5">Không giới hạn (4K)</td>
                             </tr>
                             <tr>
-                                <td class="py-4 px-5 font-medium text-sky-100/90">Quay &amp; Đăng Video HD</td>
-                                <td class="py-4 px-3 text-center text-sky-200/80">Trải nghiệm 1 ngày</td>
-                                <td class="py-4 px-3 text-center font-semibold text-white">60fps (15 giây)</td>
-                                <td class="py-4 px-3 text-center font-semibold text-white bg-sky-500/5">60fps (15 giây)</td>
+                                <td class="py-4 px-5 font-medium text-sky-100/90">Quay &amp; Đăng Video 15s – 30s</td>
+                                <td class="py-4 px-3 text-center text-sky-200/80">Có (trong 1 ngày)</td>
+                                <td class="py-4 px-3 text-center font-semibold text-white">60fps HD</td>
+                                <td class="py-4 px-3 text-center font-semibold text-white bg-sky-500/5">60fps HD</td>
                             </tr>
                             <tr>
                                 <td class="py-4 px-5 font-medium text-sky-100/90">Huy hiệu Locket Gold</td>
-                                <td class="py-4 px-3 text-center text-cyan-300 font-semibold">Theo gói thử</td>
+                                <td class="py-4 px-3 text-center text-cyan-300 font-semibold">Có</td>
                                 <td class="py-4 px-3 text-center text-cyan-300 font-bold">Có</td>
                                 <td class="py-4 px-3 text-center text-sky-300 font-bold bg-sky-500/5">Có</td>
                             </tr>
                             <tr>
-                                <td class="py-4 px-5 font-medium text-sky-100/90">Khung viền &amp; Icon VIP độc quyền</td>
+                                <td class="py-4 px-5 font-medium text-sky-100/90">Ẩn thông báo chụp màn hình</td>
+                                <td class="py-4 px-3 text-center text-cyan-300 font-semibold">Có</td>
+                                <td class="py-4 px-3 text-center text-cyan-300 font-bold">Có</td>
+                                <td class="py-4 px-3 text-center text-sky-300 font-bold bg-sky-500/5">Có</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-5 font-medium text-sky-100/90">20+ Khung viền &amp; Icon VIP</td>
                                 <td class="py-4 px-3 text-center text-sky-200/50">Không</td>
                                 <td class="py-4 px-3 text-center text-sky-200/65">Mẫu tiêu chuẩn</td>
-                                <td class="py-4 px-3 text-center text-cyan-300 font-bold bg-sky-500/5">Đầy đủ (20+ mẫu VIP)</td>
+                                <td class="py-4 px-3 text-center text-cyan-300 font-bold bg-sky-500/5">Đầy đủ trọn đời</td>
                             </tr>
                             <tr>
                                 <td class="py-4 px-5 font-medium text-sky-100/90">Bảo hành &amp; Đổi máy mới</td>
@@ -1085,7 +1084,7 @@
         </section>
 
         <!-- =================================================================
-             6. CÂU HỎI THƯỜNG GẶP (FAQ)
+             6. CÂU HỎI THƯỜNG GẶP (FAQ ACCORDION)
              ================================================================= -->
         <section id="faq" class="max-w-3xl mx-auto px-4 sm:px-6 py-14 scroll-mt-24">
             <div class="reveal-up text-center mb-10">
@@ -1098,41 +1097,41 @@
             <div class="space-y-3.5">
                 <div class="reveal-up faq-card lux-glass rounded-2xl px-6 open" style="--reveal-delay: 60ms;">
                     <button type="button" onclick="window.toggleFaq(this)" class="w-full py-5 flex items-center justify-between text-left gap-4 cursor-pointer">
-                        <span class="font-bold text-base text-white">Muốn đăng ký Gói Dùng Thử 0đ (1 ngày) thì làm thế nào?</span>
+                        <span class="font-bold text-base text-white">Cách kích hoạt Gói Dùng Thử 1 Ngày (0đ) như thế nào?</span>
                         <svg class="faq-chevron w-5 h-5 text-sky-400 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="faq-body text-sm text-sky-100/80 leading-relaxed">
-                        Gói Dùng Thử miễn phí 0đ áp dụng trong 1 ngày. Bạn chỉ cần bấm chọn "Gói Dùng Thử", nhập Username/Email Locket và bấm nút nhắn liên hệ Admin ở Zalo để được hỗ trợ cấp quyền trải nghiệm.
+                        Bạn chỉ cần bấm nút <strong>"Liên hệ Zalo Admin"</strong> ngay tại thẻ Gói Dùng Thử 1 Ngày (0đ), hệ thống sẽ mở trực tiếp trang Zalo của Admin để bạn gửi Username Locket và nhận quyền dùng thử miễn phí trong 24 giờ.
                     </div>
                 </div>
 
                 <div class="reveal-up faq-card lux-glass rounded-2xl px-6" style="--reveal-delay: 120ms;">
                     <button type="button" onclick="window.toggleFaq(this)" class="w-full py-5 flex items-center justify-between text-left gap-4 cursor-pointer">
-                        <span class="font-bold text-base text-white">Dùng DHLocket có an toàn cho tài khoản Locket không?</span>
+                        <span class="font-bold text-base text-white">Nâng cấp DHLocket có an toàn và cần mật khẩu không?</span>
                         <svg class="faq-chevron w-5 h-5 text-sky-300/70 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="faq-body text-sm text-sky-100/80 leading-relaxed">
-                        Hoàn toàn an toàn 100%. Hệ thống kích hoạt quyền lợi trực tiếp theo Username/Email Locket của bạn, không yêu cầu mật khẩu cấp 2 và không can thiệp trái phép gây khóa tài khoản.
+                        Tuyệt đối không cần mật khẩu. Hệ thống kích hoạt quyền lợi trực tiếp theo Username hoặc Email tài khoản Locket của bạn, không can thiệp hệ thống và không yêu cầu Jailbreak/Root thiết bị.
                     </div>
                 </div>
 
                 <div class="reveal-up faq-card lux-glass rounded-2xl px-6" style="--reveal-delay: 180ms;">
                     <button type="button" onclick="window.toggleFaq(this)" class="w-full py-5 flex items-center justify-between text-left gap-4 cursor-pointer">
-                        <span class="font-bold text-base text-white">Quy trình thanh toán Gói 1 Năm (59k) &amp; Gói Vĩnh Viễn (129k) hoạt động thế nào?</span>
+                        <span class="font-bold text-base text-white">Thời gian duyệt giao dịch VietQR mất bao lâu?</span>
                         <svg class="faq-chevron w-5 h-5 text-sky-300/70 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="faq-body text-sm text-sky-100/80 leading-relaxed">
-                        Sau khi chọn gói và nhập Username Locket, hệ thống sẽ tạo mã QR Techcombank kèm nội dung chuyển khoản riêng. Bạn quét mã thanh toán và bấm "Tôi đã chuyển khoản", hệ thống sẽ đối soát trong 3 phút (03:00). Nếu cần hỗ trợ kích hoạt thủ công sau 3 phút, cổng liên hệ Admin sẽ hiển thị ngay trên màn hình.
+                        Sau khi quét mã VietQR Techcombank (đã trừ mã giảm giá nếu có) và bấm "Tôi đã chuyển khoản", hệ thống tiến hành đối soát tự động trong tối đa 3 phút (03:00). Nếu sau 3 phút chưa nhận được phản hồi, cổng liên hệ Admin sẽ tự động mở để bạn gửi biên lai kích hoạt ngay lập tức.
                     </div>
                 </div>
 
                 <div class="reveal-up faq-card lux-glass rounded-2xl px-6" style="--reveal-delay: 240ms;">
                     <button type="button" onclick="window.toggleFaq(this)" class="w-full py-5 flex items-center justify-between text-left gap-4 cursor-pointer">
-                        <span class="font-bold text-base text-white">Đổi điện thoại mới có bị mất gói đã mua không?</span>
+                        <span class="font-bold text-base text-white">Cách sử dụng mã giảm giá khi thanh toán như thế nào?</span>
                         <svg class="faq-chevron w-5 h-5 text-sky-300/70 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="faq-body text-sm text-sky-100/80 leading-relaxed">
-                        Không hề mất. Bản quyền được gắn trực tiếp với tài khoản Locket của bạn, hỗ trợ đồng bộ khi bạn đăng nhập trên thiết bị mới.
+                        Khi chọn Gói 1 Năm hoặc Gói Vĩnh Viễn, bạn nhập mã giảm giá vào ô <strong>"Mã giảm giá"</strong> trong cửa sổ thanh toán và bấm <strong>"Áp dụng"</strong>. Giá tiền và mã VietQR động sẽ tự động cập nhật theo mức giá ưu đãi mới.
                     </div>
                 </div>
             </div>
@@ -1141,20 +1140,27 @@
     </main>
 
     <!-- =====================================================================
-         7. FOOTER (KHÔNG HIỂN THỊ THÔNG TIN ZALO ADMIN)
+         7. CHÂN TRANG (FOOTER — KHÔNG HIỂN THỊ SỐ ĐIỆN THOẠI ADMIN)
          ===================================================================== -->
-    <footer class="relative z-10 border-t border-sky-400/15 bg-obsidian-950/90 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sky-200/65">
-            <div class="flex items-center gap-2.5">
-                <span class="font-display font-extrabold text-lg text-white">DH<span class="text-sky-400">Locket</span></span>
-                <span>• Hệ thống nâng cấp Locket Gold &amp; VIP tự động</span>
+    <footer class="relative z-10 border-t border-sky-400/15 bg-obsidian-950/90 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-sky-200/65">
+            <div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+                <span class="font-display font-extrabold text-xl text-white">DH<span class="text-sky-400">Locket</span></span>
+                <span class="hidden sm:inline text-sky-400/40">•</span>
+                <span>Nền tảng nâng cấp Locket Gold &amp; VIP tự động 24/7 — An toàn &amp; Bảo mật</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#intro" class="hover:text-sky-300 transition-colors">Giới thiệu</a>
+                <a href="#pricing" class="hover:text-sky-300 transition-colors">Bảng giá</a>
+                <a href="#bento-features" class="hover:text-sky-300 transition-colors">Quyền lợi</a>
+                <a href="#faq" class="hover:text-sky-300 transition-colors">Hỏi đáp</a>
             </div>
             <p>© 2026 DHLocket. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- =====================================================================
-         8. MODAL THANH TOÁN VIETQR, DÙNG THỬ 0Đ & ĐẾM NGƯỢC 3 PHÚT (180 GIÂY)
+         8. CỬA SỔ THANH TOÁN VIETQR, MÃ GIẢM GIÁ & ĐẾM NGƯỢC 3 PHÚT (CHECKOUT MODAL)
          ===================================================================== -->
     <div id="checkout-modal"
          onclick="if(event.target === this) window.closeCheckout()"
@@ -1171,56 +1177,7 @@
             </button>
 
             <!-- ===============================================================
-                 BƯỚC 0: GÓI DÙNG THỬ 0Đ (TRONG 1 NGÀY — NHẮN ZALO ADMIN)
-                 =============================================================== -->
-            <div id="step-trial-form" class="step-animate hidden py-1">
-                <div class="flex items-center gap-3 mb-5 pr-8">
-                    <div class="w-11 h-11 rounded-2xl bg-cyan-500/20 border border-cyan-400/35 flex items-center justify-center text-cyan-300 shrink-0">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <div>
-                        <h3 class="font-display font-extrabold text-xl text-white">Gói Dùng Thử (0đ / 1 Ngày)</h3>
-                        <p class="text-xs text-cyan-300">Trải nghiệm miễn phí trong 1 ngày • Liên hệ Admin qua Zalo</p>
-                    </div>
-                </div>
-
-                <div class="p-4 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-between mb-5">
-                    <div>
-                        <span class="text-[11px] uppercase tracking-wider text-cyan-200/75 block">Gói trải nghiệm</span>
-                        <strong class="font-display font-bold text-lg text-white block">Gói Dùng Thử — Trong 1 ngày</strong>
-                        <span class="text-xs text-cyan-300 block mt-0.5">Không cần chuyển khoản VietQR</span>
-                    </div>
-                    <div class="text-right">
-                        <span class="font-display font-extrabold text-2xl sm:text-3xl text-cyan-300">0đ</span>
-                        <span class="text-[11px] text-cyan-200/70 block">1 ngày</span>
-                    </div>
-                </div>
-
-                <div class="mb-5">
-                    <label for="input-trial-user" class="block text-xs font-bold text-sky-100 mb-1.5">
-                        Username hoặc Email tài khoản Locket muốn dùng thử (tuỳ chọn)
-                    </label>
-                    <input type="text"
-                           id="input-trial-user"
-                           placeholder="Ví dụ: duc_hai2005 hoặc email@gmail.com"
-                           class="w-full bg-obsidian-950 border border-sky-400/25 focus:border-sky-400 rounded-xl py-3 px-4 text-sm text-white placeholder-sky-200/35 focus:outline-none transition-colors">
-                </div>
-
-                <div class="p-4 rounded-2xl bg-sky-500/10 border border-sky-400/30 text-xs sm:text-sm text-sky-100 leading-relaxed mb-5">
-                    Muốn dùng <strong>Gói Dùng Thử (0đ trong 1 ngày)</strong>, hãy nhắn liên hệ <strong>Admin ở Zalo</strong> để được hướng dẫn và cấp quyền trải nghiệm.
-                </div>
-
-                <button type="button"
-                        onclick="window.contactZaloForTrial(event)"
-                        class="w-full btn-amber-lux py-4 px-6 rounded-2xl text-sm sm:text-base flex items-center justify-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-                    <span>Nhắn Liên Hệ Admin Ở Zalo</span>
-                </button>
-                <p id="trial-zalo-status" class="hidden text-xs text-cyan-300 font-medium text-center mt-3"></p>
-            </div>
-
-            <!-- ===============================================================
-                 BƯỚC 1: NHẬP TÀI KHOẢN & QUÉT MÃ VIETQR TECHCOMBANK
+                 BƯỚC 1: NHẬP TÀI KHOẢN, MÃ GIẢM GIÁ & QUÉT MÃ VIETQR TECHCOMBANK
                  =============================================================== -->
             <div id="step-payment-form" class="step-animate">
                 <div class="flex items-center gap-3 mb-5 pr-8">
@@ -1234,21 +1191,23 @@
                 </div>
 
                 <!-- Tóm tắt gói đã chọn -->
-                <div class="p-4 rounded-2xl bg-sky-500/[0.06] border border-sky-400/25 flex items-center justify-between mb-4">
+                <div class="p-4 rounded-2xl bg-sky-500/[0.07] border border-sky-400/25 flex items-center justify-between mb-4">
                     <div>
                         <span class="text-[11px] uppercase tracking-wider text-sky-200/70 block">Gói đang chọn</span>
                         <strong id="modal-plan-title" class="font-display font-bold text-lg text-white block">Gói 1 Năm</strong>
                         <span id="modal-plan-desc" class="text-xs text-sky-300 block mt-0.5">Thời hạn: 1 Năm (365 ngày)</span>
                     </div>
                     <div class="text-right">
+                        <span id="modal-plan-original-price" class="hidden text-xs text-sky-300/50 line-through block">59.000đ</span>
                         <span id="modal-plan-price" class="font-display font-extrabold text-2xl sm:text-3xl text-sky-300">59.000đ</span>
+                        <span id="modal-discount-badge" class="hidden text-[11px] font-bold text-cyan-300 block mt-0.5">-20.000đ</span>
                     </div>
                 </div>
 
                 <!-- Ô nhập Username hoặc Email Locket (Bắt buộc) -->
-                <div class="mb-4">
+                <div class="mb-3.5">
                     <label for="input-locket-user" class="block text-xs font-bold text-sky-100 mb-1.5">
-                        Username hoặc Email tài khoản Locket <span class="text-rose-400">*</span>
+                        Username hoặc Email tài khoản Locket nhận gói <span class="text-rose-400">*</span>
                     </label>
                     <input type="text"
                            id="input-locket-user"
@@ -1258,6 +1217,33 @@
                     <p id="input-error-msg" class="hidden text-xs text-rose-400 font-semibold mt-1.5">
                         ⚠ Vui lòng nhập Username hoặc Email Locket trước khi xác nhận đã chuyển khoản!
                     </p>
+                </div>
+
+                <!-- Ô nhập Mã Giảm Giá -->
+                <div class="mb-4">
+                    <label for="input-promo-code" class="block text-xs font-bold text-sky-100 mb-1.5">
+                        Mã giảm giá (nếu có)
+                    </label>
+                    <div class="flex items-center gap-2">
+                        <input type="text"
+                               id="input-promo-code"
+                               onkeydown="if(event.key === 'Enter'){ event.preventDefault(); window.applyPromoCode(); }"
+                               placeholder="Nhập mã ưu đãi..."
+                               class="flex-1 bg-obsidian-950 border border-sky-400/25 focus:border-sky-400 rounded-xl py-2.5 px-3.5 text-sm text-white placeholder-sky-200/35 focus:outline-none transition-colors uppercase font-mono">
+                        <button type="button"
+                                id="btn-apply-promo"
+                                onclick="window.applyPromoCode()"
+                                class="px-4 py-2.5 rounded-xl bg-sky-500/20 hover:bg-sky-400 hover:text-obsidian-950 text-sky-200 border border-sky-400/40 font-bold text-xs sm:text-sm transition-all cursor-pointer shrink-0">
+                            Áp dụng
+                        </button>
+                        <button type="button"
+                                id="btn-remove-promo"
+                                onclick="window.removePromoCode()"
+                                class="hidden px-3.5 py-2.5 rounded-xl bg-rose-500/20 hover:bg-rose-500 text-rose-200 hover:text-white border border-rose-400/40 font-bold text-xs sm:text-sm transition-all cursor-pointer shrink-0">
+                            Gỡ mã
+                        </button>
+                    </div>
+                    <p id="promo-feedback-msg" class="hidden text-xs font-semibold mt-1.5"></p>
                 </div>
 
                 <!-- Khung thẻ VietQR Techcombank -->
@@ -1274,7 +1260,7 @@
                     <!-- Thông tin tài khoản nhận -->
                     <div class="w-full flex-1 space-y-2 text-center sm:text-left">
                         <div class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800 text-[11px] font-extrabold">
-                            NGÂN HÀNG TECHCOMBANK
+                            NGÂN HÀNG TECHCOMBANK (TCB)
                         </div>
 
                         <div>
@@ -1287,8 +1273,9 @@
                             <div class="flex items-center justify-center sm:justify-start gap-2 mt-0.5">
                                 <strong class="font-mono text-sm font-extrabold text-slate-950 select-all">9999999995671</strong>
                                 <button type="button"
-                                        onclick="window.copyClipboard('9999999995671', 'Đã sao chép STK: 9999999995671')"
-                                        class="px-2 py-0.5 rounded bg-sky-100 hover:bg-sky-200 text-[11px] font-bold text-sky-900 cursor-pointer transition-colors">
+                                        id="btn-copy-stk"
+                                        onclick="window.copySTK(this)"
+                                        class="px-2.5 py-0.5 rounded bg-sky-100 hover:bg-sky-200 text-[11px] font-bold text-sky-900 cursor-pointer transition-colors">
                                     Sao chép
                                 </button>
                             </div>
@@ -1304,9 +1291,10 @@
                             <div class="flex items-center justify-center sm:justify-start gap-1.5 flex-wrap mt-0.5">
                                 <span id="qr-text-memo" class="font-mono font-extrabold text-xs bg-sky-100 border border-sky-300 px-2 py-1 rounded text-slate-950 select-all">DHL1N</span>
                                 <button type="button"
-                                        onclick="window.copyMemo()"
-                                        class="px-2 py-1 rounded bg-slate-900 hover:bg-slate-800 text-[11px] font-bold text-sky-300 cursor-pointer transition-colors">
-                                    Copy nội dung
+                                        id="btn-copy-memo"
+                                        onclick="window.copyMemo(this)"
+                                        class="px-2.5 py-1 rounded bg-slate-900 hover:bg-slate-800 text-[11px] font-bold text-sky-300 cursor-pointer transition-colors">
+                                    Sao chép
                                 </button>
                             </div>
                         </div>
@@ -1363,14 +1351,15 @@
                     </div>
 
                     <!-- Tóm tắt đơn hàng -->
-                    <div class="mt-4 pt-4 border-t border-sky-400/15 grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-sky-200/70">
-                        <div class="sm:text-left">Gói: <strong id="summary-plan" class="text-white block sm:inline">---</strong></div>
-                        <div class="sm:text-center">Tài khoản: <strong id="summary-user" class="text-white block sm:inline">---</strong></div>
-                        <div class="sm:text-right">Nội dung CK: <strong id="summary-memo" class="text-sky-300 font-mono block sm:inline">---</strong></div>
+                    <div class="mt-4 pt-4 border-t border-sky-400/15 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-sky-200/75 text-left">
+                        <div>Gói: <strong id="summary-plan" class="text-white">---</strong></div>
+                        <div class="sm:text-right">Số tiền: <strong id="summary-amount" class="text-cyan-300">---</strong></div>
+                        <div>Tài khoản: <strong id="summary-user" class="text-white">---</strong></div>
+                        <div class="sm:text-right">Nội dung CK: <strong id="summary-memo" class="text-sky-300 font-mono">---</strong></div>
                     </div>
                 </div>
 
-                <!-- KHU VỰC ZALO ADMIN: CHỈ HIỆN SAU KHI ĐỒNG HỒ ĐẾM NGƯỢC VỀ 00:00 -->
+                <!-- KHU VỰC ZALO ADMIN: ẨN HOÀN TOÀN TRONG 3 PHÚT, CHỈ HIỆN KHI ĐỒNG HỒ VỀ 00:00 -->
                 <div id="timeout-zalo-box" class="hidden space-y-4">
                     <div class="p-4 sm:p-5 rounded-2xl bg-sky-500/15 border border-sky-400/45 text-left sm:text-center">
                         <p class="font-display font-extrabold text-base sm:text-lg text-sky-300 mb-1.5">
@@ -1419,647 +1408,602 @@
     </div>
 
     <!-- =====================================================================
-         10. JAVASCRIPT THUẦN ĐỘC LẬP (KHÔNG PHỤ THUỘC THƯ VIỆN NGOÀI)
+         10. HỆ THỐNG LOGIC THANH TOÁN, ĐẾM NGƯỢC & HIỆU ỨNG CHUYỂN ĐỘNG
          ===================================================================== -->
     <script>
         (function () {
-            var STORAGE_KEY = 'dhlocket_checkout_session_v1';
-            var WAIT_DURATION_MS = 180 * 1000; // 3 phút = 180 giây
+            'use strict';
 
-            // Khởi tạo URL Zalo Admin động từ mã mảnh để không lộ số điện thoại dưới dạng văn bản thô
-            function resolveZaloTargets() {
-                var segments = ['035', '716', '8099'];
-                var phoneKey = segments.join('');
-                return {
-                    webUrl: 'https://zalo.me/' + phoneKey,
-                    appUrl: 'zalo://chat?phone=' + phoneKey
-                };
-            }
+            // Cấu hình thông tin thanh toán & liên hệ (giấu SĐT khỏi nội dung hiển thị)
+            const BANK_ID = 'TCB';
+            const ACCOUNT_NO = '9999999995671';
+            const ACCOUNT_NAME = 'DAO DUC HAI';
+            const ADMIN_ZALO_ID = ['0357', '168', '099'].join('');
+            const COUNTDOWN_SECONDS = 180; // 3 phút = 180 giây
+            const STORAGE_KEY = 'dhlocket_order_session_v1';
 
-            function triggerAnchorNavigation(url, useNewTab) {
-                var link = document.createElement('a');
-                link.href = url;
-                if (useNewTab) {
-                    link.target = '_blank';
-                    link.rel = 'noopener noreferrer';
-                }
-                link.style.display = 'none';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-
-            function isInsideIframe() {
-                try {
-                    return window.self !== window.top;
-                } catch (e) {
-                    return true;
-                }
-            }
-
-            // Mở trang Zalo của Admin một cách đáng tin cậy (hỗ trợ cả tab mới, điều hướng trực tiếp và app scheme)
-            window.openZaloAdmin = function (evt) {
-                if (evt) {
-                    evt.preventDefault();
-                    evt.stopPropagation();
-                }
-
-                var statusEl = document.getElementById('zalo-launch-status');
-                var targets = resolveZaloTargets();
-                var opened = false;
-
-                try {
-                    // Thử mở tab mới bằng window.open trước
-                    var popup = window.open(targets.webUrl, '_blank', 'noopener,noreferrer');
-                    if (popup && !popup.closed) {
-                        opened = true;
-                    }
-                } catch (errPopup) {
-                    opened = false;
-                }
-
-                // Nếu popup bị chặn hoặc đang chạy trong iframe/webview hạn chế, điều hướng trực tiếp qua thẻ <a> hoặc top/location
-                if (!opened) {
-                    try {
-                        triggerAnchorNavigation(targets.webUrl, !isInsideIframe());
-                        opened = true;
-                    } catch (errAnchor) {
-                        try {
-                            if (isInsideIframe() && window.top) {
-                                window.top.location.href = targets.webUrl;
-                            } else {
-                                window.location.assign(targets.webUrl);
-                            }
-                            opened = true;
-                        } catch (errLoc) {
-                            window.location.href = targets.webUrl;
-                        }
-                    }
-                }
-
-                // Thử kích hoạt ứng dụng Zalo trên thiết bị di động sau một nhịp ngắn nếu trình duyệt cho phép
-                var isMobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '');
-                if (isMobileDevice) {
-                    setTimeout(function () {
-                        try {
-                            if (document.visibilityState === 'visible') {
-                                triggerAnchorNavigation(targets.appUrl, false);
-                            }
-                        } catch (errScheme) {
-                            // Bỏ qua nếu trình duyệt chặn custom scheme
-                        }
-                    }, 650);
-                }
-
-                if (statusEl) {
-                    statusEl.textContent = 'Đang mở trang Zalo Admin... Nếu trình duyệt chặn cửa sổ bật lên, hãy cho phép mở liên kết.';
-                    statusEl.classList.remove('hidden');
-                }
-
-                window.showToast('Đang mở trang Zalo Admin...');
-                return false;
-            };
-
-            // Mở khung Gói Dùng Thử (0đ trong 1 ngày — nhắn liên hệ Admin ở Zalo)
-            window.openTrialModal = function () {
-                try {
-                    clearCountdownInterval();
-                    clearSessionStorage();
-
-                    document.getElementById('step-payment-form').classList.add('hidden');
-                    document.getElementById('step-countdown').classList.add('hidden');
-                    document.getElementById('timeout-zalo-box').classList.add('hidden');
-                    document.getElementById('step-trial-form').classList.remove('hidden');
-
-                    var trialStatus = document.getElementById('trial-zalo-status');
-                    if (trialStatus) {
-                        trialStatus.classList.add('hidden');
-                    }
-
-                    showModalContainer();
-                } catch (err) {
-                    console.error('Lỗi mở Gói Dùng Thử:', err);
-                }
-            };
-
-            // Nhắn liên hệ Admin ở Zalo cho Gói Dùng Thử 0đ (1 ngày)
-            window.contactZaloForTrial = function (evt) {
-                if (evt) {
-                    evt.preventDefault();
-                    evt.stopPropagation();
-                }
-                var trialInput = document.getElementById('input-trial-user');
-                var trialUser = trialInput ? trialInput.value.trim() : '';
-                if (trialUser) {
-                    window.copyClipboard(
-                        'Gói Dùng Thử 0đ (1 ngày) - Tài khoản: ' + trialUser,
-                        'Đã sao chép thông tin dùng thử: ' + trialUser
-                    );
-                }
-                var res = window.openZaloAdmin(evt);
-                var trialStatus = document.getElementById('trial-zalo-status');
-                if (trialStatus) {
-                    trialStatus.textContent = 'Đang mở Zalo Admin để hỗ trợ Gói Dùng Thử (0đ trong 1 ngày)...';
-                    trialStatus.classList.remove('hidden');
-                }
-                return res;
-            };
-
-            // Trạng thái đơn hàng toàn cục
-            var currentState = {
+            // Trạng thái đơn hàng hiện tại
+            let currentOrder = {
+                planKey: 'pro1y',
                 planName: 'Gói 1 Năm',
-                amount: 59000,
-                formattedPrice: '59.000đ',
-                descText: 'Thời hạn: 1 Năm (365 ngày)',
+                basePrice: 59000,
+                discountAmount: 0,
+                promoCode: '',
+                finalPrice: 59000,
+                desc: 'Thời hạn: 1 Năm (365 ngày)',
                 prefix: 'DHL1N',
                 username: '',
                 memo: 'DHL1N',
-                stage: 'form', // 'form' | 'counting' | 'expired'
-                endTime: null,
-                timerId: null
+                status: 'idle', // 'idle' | 'counting' | 'expired'
+                endTime: null
             };
 
-            function saveSessionToStorage() {
-                try {
-                    var payload = {
-                        planName: currentState.planName,
-                        amount: currentState.amount,
-                        formattedPrice: currentState.formattedPrice,
-                        descText: currentState.descText,
-                        prefix: currentState.prefix,
-                        username: currentState.username,
-                        memo: currentState.memo,
-                        stage: currentState.stage,
-                        endTime: currentState.endTime,
-                        updatedAt: Date.now()
-                    };
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
-                } catch (e) {
-                    // Bỏ qua nếu trình duyệt chặn localStorage
+            let countdownInterval = null;
+            let toastTimer = null;
+
+            // Định dạng tiền tệ VNĐ
+            function formatVND(amount) {
+                return Number(amount || 0).toLocaleString('vi-VN') + 'đ';
+            }
+
+            // Hiển thị thông báo góc màn hình
+            window.showToast = function (message) {
+                const toast = document.getElementById('toast-notification');
+                const text = document.getElementById('toast-text');
+                if (!toast || !text) return;
+
+                text.textContent = message;
+                toast.classList.remove('translate-y-24', 'opacity-0');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => {
+                    toast.classList.add('translate-y-24', 'opacity-0');
+                }, 3000);
+            };
+
+            // Sao chép văn bản an toàn
+            function copyTextFallback(text, onSuccess) {
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(text).then(onSuccess).catch(() => {
+                        legacyExecCopy(text, onSuccess);
+                    });
+                } else {
+                    legacyExecCopy(text, onSuccess);
                 }
             }
 
-            function clearSessionStorage() {
+            function legacyExecCopy(text, onSuccess) {
+                const tempInput = document.createElement('textarea');
+                tempInput.value = text;
+                tempInput.style.position = 'fixed';
+                tempInput.style.opacity = '0';
+                document.body.appendChild(tempInput);
+                tempInput.focus();
+                tempInput.select();
+                try {
+                    document.execCommand('copy');
+                    if (onSuccess) onSuccess();
+                } catch (e) {
+                    // Bỏ qua nếu trình duyệt chặn
+                }
+                document.body.removeChild(tempInput);
+            }
+
+            // Phản hồi nút "Đã sao chép"
+            function flashCopyButton(btn, defaultLabel) {
+                if (!btn) return;
+                btn.textContent = 'Đã sao chép ✓';
+                setTimeout(() => {
+                    btn.textContent = defaultLabel;
+                }, 2000);
+            }
+
+            window.copySTK = function (btn) {
+                copyTextFallback(ACCOUNT_NO, () => {
+                    flashCopyButton(btn, 'Sao chép');
+                    window.showToast('Đã sao chép số tài khoản Techcombank!');
+                });
+            };
+
+            window.copyMemo = function (btn) {
+                const memo = currentOrder.memo || currentOrder.prefix;
+                copyTextFallback(memo, () => {
+                    flashCopyButton(btn, 'Sao chép');
+                    window.showToast('Đã sao chép nội dung chuyển khoản: ' + memo);
+                });
+            };
+
+            // Mở trực tiếp Zalo Admin (cho gói dùng thử 0đ và sau khi hết 3 phút)
+            window.openZaloAdmin = function (e) {
+                if (e && e.preventDefault) e.preventDefault();
+                const webUrl = 'https://zalo.me/' + ADMIN_ZALO_ID;
+                const appUrl = 'zalo://chat?phone=' + ADMIN_ZALO_ID;
+
+                const statusEl = document.getElementById('zalo-launch-status');
+                if (statusEl) {
+                    statusEl.textContent = 'Đang mở trang Zalo của Admin...';
+                    statusEl.classList.remove('hidden');
+                }
+
+                const win = window.open(webUrl, '_blank', 'noopener,noreferrer');
+                if (!win) {
+                    window.location.href = webUrl;
+                }
+
+                // Fallback mở ứng dụng Zalo trên thiết bị di động
+                setTimeout(() => {
+                    try {
+                        const iframe = document.createElement('iframe');
+                        iframe.style.display = 'none';
+                        iframe.src = appUrl;
+                        document.body.appendChild(iframe);
+                        setTimeout(() => iframe.remove(), 1200);
+                    } catch (err) {}
+                }, 400);
+
+                return false;
+            };
+
+            window.openTrialZalo = function (e) {
+                window.showToast('Đang kết nối Zalo Admin để nhận Gói Dùng Thử 1 Ngày (0đ)...');
+                return window.openZaloAdmin(e);
+            };
+
+            // Lưu / Đọc trạng thái đơn hàng từ localStorage
+            function saveOrderSession() {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(currentOrder));
+                } catch (e) {}
+            }
+
+            function loadOrderSession() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_KEY);
+                    if (!raw) return null;
+                    return JSON.parse(raw);
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            function clearOrderSession() {
                 try {
                     localStorage.removeItem(STORAGE_KEY);
-                } catch (e) {
-                    // Bỏ qua nếu trình duyệt chặn localStorage
+                } catch (e) {}
+            }
+
+            // Tính lại giá sau khi áp dụng mã giảm giá & cập nhật mã VietQR động
+            function recalculatePricingAndQR() {
+                const promoMap = window.DHLOCKET_PROMO_CODES || {};
+                let discount = 0;
+
+                if (currentOrder.promoCode && promoMap[currentOrder.promoCode]) {
+                    const rule = promoMap[currentOrder.promoCode];
+                    const allowedPlans = Array.isArray(rule.plans) ? rule.plans : ['all'];
+                    if (allowedPlans.includes('all') || allowedPlans.includes(currentOrder.planKey)) {
+                        discount = Math.max(0, Number(rule.discount) || 0);
+                    } else {
+                        currentOrder.promoCode = '';
+                    }
+                } else {
+                    currentOrder.promoCode = '';
+                }
+
+                currentOrder.discountAmount = Math.min(currentOrder.basePrice, discount);
+                currentOrder.finalPrice = Math.max(0, currentOrder.basePrice - currentOrder.discountAmount);
+
+                // Cập nhật hiển thị giá trong Modal
+                const origPriceEl = document.getElementById('modal-plan-original-price');
+                const finalPriceEl = document.getElementById('modal-plan-price');
+                const badgeEl = document.getElementById('modal-discount-badge');
+                const qrAmountEl = document.getElementById('qr-text-amount');
+
+                if (currentOrder.discountAmount > 0) {
+                    origPriceEl.textContent = formatVND(currentOrder.basePrice);
+                    origPriceEl.classList.remove('hidden');
+                    badgeEl.textContent = '-' + formatVND(currentOrder.discountAmount) + ' (' + currentOrder.promoCode.toUpperCase() + ')';
+                    badgeEl.classList.remove('hidden');
+                } else {
+                    origPriceEl.classList.add('hidden');
+                    badgeEl.classList.add('hidden');
+                }
+
+                finalPriceEl.textContent = formatVND(currentOrder.finalPrice);
+                qrAmountEl.textContent = formatVND(currentOrder.finalPrice);
+
+                // Tạo nội dung chuyển khoản sạch không dấu
+                const userInput = document.getElementById('input-locket-user');
+                const rawUser = userInput ? userInput.value.trim() : currentOrder.username;
+                currentOrder.username = rawUser;
+
+                const cleanUser = rawUser
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '')
+                    .replace(/[^a-zA-Z0-9._@]/g, '')
+                    .slice(0, 24);
+
+                const codeSuffix = currentOrder.promoCode ? ' ' + currentOrder.promoCode.toUpperCase() : '';
+                const memo = (cleanUser ? `${currentOrder.prefix} ${cleanUser}` : currentOrder.prefix) + codeSuffix;
+                currentOrder.memo = memo;
+
+                const memoEl = document.getElementById('qr-text-memo');
+                if (memoEl) memoEl.textContent = memo;
+
+                // Cập nhật URL ảnh VietQR Techcombank động
+                const qrImg = document.getElementById('vietqr-img');
+                if (qrImg) {
+                    const encodedInfo = encodeURIComponent(memo);
+                    const encodedAccName = encodeURIComponent(ACCOUNT_NAME);
+                    qrImg.src = `https://img.vietqr.io/image/${BANK_ID}-${ACCOUNT_NO}-compact2.png?amount=${currentOrder.finalPrice}&addInfo=${encodedInfo}&accountName=${encodedAccName}`;
                 }
             }
 
-            function clearCountdownInterval() {
-                if (currentState.timerId) {
-                    clearInterval(currentState.timerId);
-                    currentState.timerId = null;
-                }
-            }
+            window.updateDynamicQR = function () {
+                const errEl = document.getElementById('input-error-msg');
+                if (errEl) errEl.classList.add('hidden');
+                recalculatePricingAndQR();
+            };
 
-            function showModalContainer() {
-                var modal = document.getElementById('checkout-modal');
-                var card = document.getElementById('checkout-modal-card');
+            // Áp dụng mã giảm giá
+            window.applyPromoCode = function () {
+                const input = document.getElementById('input-promo-code');
+                const feedback = document.getElementById('promo-feedback-msg');
+                const btnApply = document.getElementById('btn-apply-promo');
+                const btnRemove = document.getElementById('btn-remove-promo');
+                if (!input || !feedback) return;
+
+                const code = input.value.trim().toLowerCase();
+                const promoMap = window.DHLOCKET_PROMO_CODES || {};
+
+                if (!code) {
+                    feedback.textContent = '⚠ Vui lòng nhập mã giảm giá trước khi bấm Áp dụng.';
+                    feedback.className = 'text-xs font-semibold mt-1.5 text-rose-400';
+                    feedback.classList.remove('hidden');
+                    return;
+                }
+
+                const promoRule = promoMap[code];
+                if (!promoRule) {
+                    feedback.textContent = '✕ Mã giảm giá "' + code.toUpperCase() + '" không tồn tại hoặc đã hết hạn.';
+                    feedback.className = 'text-xs font-semibold mt-1.5 text-rose-400';
+                    feedback.classList.remove('hidden');
+                    return;
+                }
+
+                const allowedPlans = Array.isArray(promoRule.plans) ? promoRule.plans : ['all'];
+                if (!allowedPlans.includes('all') && !allowedPlans.includes(currentOrder.planKey)) {
+                    feedback.textContent = '⚠ Mã "' + code.toUpperCase() + '" không áp dụng cho gói này.';
+                    feedback.className = 'text-xs font-semibold mt-1.5 text-rose-400';
+                    feedback.classList.remove('hidden');
+                    return;
+                }
+
+                currentOrder.promoCode = code;
+                recalculatePricingAndQR();
+
+                input.disabled = true;
+                btnApply.classList.add('hidden');
+                btnRemove.classList.remove('hidden');
+
+                const labelText = promoRule.label || ('Giảm ' + formatVND(currentOrder.discountAmount));
+                feedback.textContent = '✓ Đã áp dụng mã ' + code.toUpperCase() + ' (' + labelText + ')!';
+                feedback.className = 'text-xs font-semibold mt-1.5 text-cyan-300';
+                feedback.classList.remove('hidden');
+
+                window.showToast('Áp dụng thành công mã ' + code.toUpperCase() + '!');
+            };
+
+            // Gỡ mã giảm giá
+            window.removePromoCode = function () {
+                const input = document.getElementById('input-promo-code');
+                const feedback = document.getElementById('promo-feedback-msg');
+                const btnApply = document.getElementById('btn-apply-promo');
+                const btnRemove = document.getElementById('btn-remove-promo');
+
+                currentOrder.promoCode = '';
+                currentOrder.discountAmount = 0;
+                recalculatePricingAndQR();
+
+                if (input) {
+                    input.disabled = false;
+                    input.value = '';
+                }
+                if (btnApply) btnApply.classList.remove('hidden');
+                if (btnRemove) btnRemove.classList.add('hidden');
+                if (feedback) feedback.classList.add('hidden');
+
+                window.showToast('Đã gỡ mã giảm giá.');
+            };
+
+            // Mở Modal thanh toán cho Gói 1 Năm (59k) hoặc Gói Vĩnh Viễn (129k)
+            window.openCheckout = function (planKey, planName, basePrice, desc, prefix) {
+                const modal = document.getElementById('checkout-modal');
+                const stepPayment = document.getElementById('step-payment-form');
+                const stepCountdown = document.getElementById('step-countdown');
+
+                // Kiểm tra nếu đang có phiên đếm ngược dở dang của đúng gói này thì khôi phục
+                const saved = loadOrderSession();
+                if (saved && (saved.status === 'counting' || saved.status === 'expired') && saved.planKey === planKey) {
+                    currentOrder = saved;
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                    enterCountdownView(false);
+                    return;
+                }
+
+                // Khởi tạo đơn mới
+                clearInterval(countdownInterval);
+                clearOrderSession();
+
+                currentOrder = {
+                    planKey: planKey,
+                    planName: planName,
+                    basePrice: basePrice,
+                    discountAmount: 0,
+                    promoCode: '',
+                    finalPrice: basePrice,
+                    desc: desc,
+                    prefix: prefix,
+                    username: document.getElementById('input-locket-user')?.value.trim() || '',
+                    memo: prefix,
+                    status: 'idle',
+                    endTime: null
+                };
+
+                document.getElementById('modal-plan-title').textContent = planName;
+                document.getElementById('modal-plan-desc').textContent = desc;
+                document.getElementById('input-error-msg').classList.add('hidden');
+
+                // Reset ô mã giảm giá
+                const promoInput = document.getElementById('input-promo-code');
+                const promoFeedback = document.getElementById('promo-feedback-msg');
+                const btnApply = document.getElementById('btn-apply-promo');
+                const btnRemove = document.getElementById('btn-remove-promo');
+                if (promoInput) {
+                    promoInput.disabled = false;
+                    promoInput.value = '';
+                }
+                if (promoFeedback) promoFeedback.classList.add('hidden');
+                if (btnApply) btnApply.classList.remove('hidden');
+                if (btnRemove) btnRemove.classList.add('hidden');
+
+                recalculatePricingAndQR();
+
+                stepCountdown.classList.add('hidden');
+                stepPayment.classList.remove('hidden');
+
                 modal.classList.remove('hidden');
                 modal.classList.add('flex');
-                if (card) {
-                    card.classList.remove('modal-card-animate');
-                    void card.offsetWidth;
-                    card.classList.add('modal-card-animate');
-                }
-            }
+                document.body.style.overflow = 'hidden';
+            };
 
-            function hideModalContainer() {
-                var modal = document.getElementById('checkout-modal');
+            // Đóng Modal
+            window.closeCheckout = function () {
+                const modal = document.getElementById('checkout-modal');
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
-            }
+                document.body.style.overflow = '';
+            };
 
-            function renderExpiredState(memoText) {
-                clearCountdownInterval();
-                currentState.stage = 'expired';
-                saveSessionToStorage();
+            // Xác nhận "Tôi đã chuyển khoản" -> Bắt đầu đếm ngược 03:00 (180 giây)
+            window.confirmTransfer = function () {
+                const userInput = document.getElementById('input-locket-user');
+                const errEl = document.getElementById('input-error-msg');
+                const username = userInput ? userInput.value.trim() : '';
 
-                var clockEl = document.getElementById('timer-clock');
-                var barEl = document.getElementById('timer-progress-bar');
-                var badgeIcon = document.getElementById('status-badge-icon');
-                var r1 = document.getElementById('sonar-ring-1');
-                var r2 = document.getElementById('sonar-ring-2');
+                if (!username) {
+                    if (errEl) errEl.classList.remove('hidden');
+                    if (userInput) userInput.focus();
+                    return;
+                }
 
-                clockEl.textContent = '00:00';
-                barEl.style.width = '0%';
-                badgeIcon.className = 'relative w-16 h-16 rounded-2xl bg-sky-500/20 border border-sky-400/45 flex items-center justify-center text-sky-300';
-                if (r1) r1.classList.add('hidden');
-                if (r2) r2.classList.add('hidden');
+                if (errEl) errEl.classList.add('hidden');
+                recalculatePricingAndQR();
 
-                document.getElementById('countdown-heading').textContent = 'Hết thời gian đối soát tự động';
-                document.getElementById('countdown-subtext').classList.add('hidden');
-                document.getElementById('warning-keep-open').classList.add('hidden');
-                document.getElementById('timer-caption').textContent = 'Trạng thái giao dịch';
+                currentOrder.username = username;
+                currentOrder.status = 'counting';
+                currentOrder.endTime = Date.now() + COUNTDOWN_SECONDS * 1000;
+                saveOrderSession();
 
-                document.getElementById('timeout-memo-text').textContent = memoText || currentState.memo || currentState.prefix;
-                document.getElementById('timeout-zalo-box').classList.remove('hidden');
-            }
+                enterCountdownView(true);
+            };
 
-            function startCountdownLoop(endTimestamp, usernameVal, memoVal, planVal) {
-                clearCountdownInterval();
-                currentState.stage = 'counting';
-                currentState.endTime = endTimestamp;
-                currentState.username = usernameVal;
-                currentState.memo = memoVal;
-                currentState.planName = planVal;
+            // Hiển thị & chạy đồng hồ đếm ngược 3 phút
+            function enterCountdownView(isFreshStart) {
+                const stepPayment = document.getElementById('step-payment-form');
+                const stepCountdown = document.getElementById('step-countdown');
 
-                document.getElementById('summary-plan').textContent = planVal;
-                document.getElementById('summary-user').textContent = usernameVal;
-                document.getElementById('summary-memo').textContent = memoVal;
-                document.getElementById('timeout-memo-text').textContent = memoVal;
+                stepPayment.classList.add('hidden');
+                stepCountdown.classList.remove('hidden');
 
-                // Khi đang đếm ngược: hiện cảnh báo không đóng trang và ẩn hoàn toàn hộp Zalo Admin
-                document.getElementById('timeout-zalo-box').classList.add('hidden');
-                document.getElementById('warning-keep-open').classList.remove('hidden');
-                document.getElementById('countdown-subtext').classList.remove('hidden');
-                document.getElementById('countdown-heading').textContent = 'Đang kiểm tra giao dịch...';
-                document.getElementById('timer-caption').textContent = 'Thời gian đối soát tự động còn lại';
+                // Điền tóm tắt đơn hàng
+                document.getElementById('summary-plan').textContent = currentOrder.planName;
+                document.getElementById('summary-amount').textContent = formatVND(currentOrder.finalPrice);
+                document.getElementById('summary-user').textContent = currentOrder.username;
+                document.getElementById('summary-memo').textContent = currentOrder.memo;
+                document.getElementById('timeout-memo-text').textContent = currentOrder.memo;
 
-                var badgeIcon = document.getElementById('status-badge-icon');
-                var r1 = document.getElementById('sonar-ring-1');
-                var r2 = document.getElementById('sonar-ring-2');
-                badgeIcon.className = 'relative w-16 h-16 rounded-2xl bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-sky-300 animate-pulse';
-                if (r1) r1.classList.remove('hidden');
-                if (r2) r2.classList.remove('hidden');
-
-                document.getElementById('step-payment-form').classList.add('hidden');
-                document.getElementById('step-countdown').classList.remove('hidden');
-
-                var clockEl = document.getElementById('timer-clock');
-                var barEl = document.getElementById('timer-progress-bar');
+                clearInterval(countdownInterval);
 
                 function tick() {
-                    var remainingMs = currentState.endTime - Date.now();
-                    var secondsLeft = Math.max(0, Math.ceil(remainingMs / 1000));
+                    const remainingMs = (currentOrder.endTime || 0) - Date.now();
+                    const remainingSec = Math.max(0, Math.ceil(remainingMs / 1000));
 
-                    var mins = Math.floor(secondsLeft / 60);
-                    var secs = secondsLeft % 60;
-                    var mStr = mins < 10 ? '0' + mins : '' + mins;
-                    var sStr = secs < 10 ? '0' + secs : '' + secs;
-                    clockEl.textContent = mStr + ':' + sStr;
+                    const mins = String(Math.floor(remainingSec / 60)).padStart(2, '0');
+                    const secs = String(remainingSec % 60).padStart(2, '0');
 
-                    var pct = Math.max(0, Math.min(100, (remainingMs / WAIT_DURATION_MS) * 100));
-                    barEl.style.width = pct + '%';
+                    const clockEl = document.getElementById('timer-clock');
+                    const barEl = document.getElementById('timer-progress-bar');
 
-                    if (remainingMs <= 0) {
-                        renderExpiredState(memoVal);
-                        var linkEl = document.getElementById('zalo-admin-link');
-                        if (linkEl) {
-                            linkEl.setAttribute('data-ready', '1');
-                        }
-                        window.showToast('Chưa Nhận Được Thông Tin Giao Dịch Vui Lòng Liên Hệ Zalo!');
+                    if (clockEl) clockEl.textContent = `${mins}:${secs}`;
+                    if (barEl) {
+                        const pct = Math.max(0, Math.min(100, (remainingSec / COUNTDOWN_SECONDS) * 100));
+                        barEl.style.width = pct + '%';
+                    }
+
+                    if (remainingSec > 0) {
+                        // Đang trong 3 phút chờ: ẨN HOÀN TOÀN Zalo Admin, hiện cảnh báo không đóng trang
+                        document.getElementById('timeout-zalo-box').classList.add('hidden');
+                        document.getElementById('warning-keep-open').classList.remove('hidden');
+                        document.getElementById('countdown-heading').textContent = 'Đang kiểm tra giao dịch...';
+                        document.getElementById('countdown-subtext').textContent =
+                            'Hệ thống đang đối soát tự động giao dịch từ Techcombank. Vui lòng giữ nguyên màn hình trong 3 phút.';
+                        document.getElementById('timer-caption').textContent = 'Thời gian đối soát tự động còn lại';
+                    } else {
+                        // Hết 3 phút (00:00): Dừng đếm, hiện thông báo & nút Mở Zalo Admin
+                        clearInterval(countdownInterval);
+                        currentOrder.status = 'expired';
+                        saveOrderSession();
+
+                        document.getElementById('warning-keep-open').classList.add('hidden');
+                        document.getElementById('timeout-zalo-box').classList.remove('hidden');
+                        document.getElementById('countdown-heading').textContent = 'Hết thời gian chờ tự động';
+                        document.getElementById('countdown-subtext').textContent =
+                            'Vui lòng liên hệ Zalo Admin bên dưới để được kiểm tra biên lai và kích hoạt gói ngay.';
+                        document.getElementById('timer-caption').textContent = 'Đã kết thúc thời gian đối soát';
                     }
                 }
 
                 tick();
-                saveSessionToStorage();
-
-                if (currentState.endTime > Date.now()) {
-                    currentState.timerId = setInterval(tick, 500);
-                }
+                countdownInterval = setInterval(tick, 1000);
             }
 
-            // 1. Hàm mở Modal Thanh Toán toàn cục (gắn trực tiếp vào thẻ gói và nút chọn)
-            window.openCheckout = function (planName, amount, formattedPrice, descText, prefix) {
-                try {
-                    // Nếu đang có phiên đếm ngược 3 phút cho đúng gói này và chưa hết hạn thì giữ nguyên đồng hồ
-                    try {
-                        var rawSaved = localStorage.getItem(STORAGE_KEY);
-                        if (rawSaved) {
-                            var saved = JSON.parse(rawSaved);
-                            if (saved && saved.planName === planName && saved.stage === 'counting' && saved.endTime && saved.endTime > Date.now()) {
-                                currentState.planName = saved.planName;
-                                currentState.amount = saved.amount || amount;
-                                currentState.formattedPrice = saved.formattedPrice || formattedPrice;
-                                currentState.descText = saved.descText || descText;
-                                currentState.prefix = saved.prefix || prefix;
-                                document.getElementById('step-trial-form').classList.add('hidden');
-                                showModalContainer();
-                                startCountdownLoop(saved.endTime, saved.username || '', saved.memo || prefix, saved.planName);
-                                return;
-                            }
-                        }
-                    } catch (e) {
-                        // Tiếp tục mở form mặc định
-                    }
-
-                    clearCountdownInterval();
-                    clearSessionStorage();
-
-                    currentState.planName = planName;
-                    currentState.amount = amount;
-                    currentState.formattedPrice = formattedPrice;
-                    currentState.descText = descText;
-                    currentState.prefix = prefix;
-                    currentState.stage = 'form';
-                    currentState.endTime = null;
-
-                    // Đặt lại giao diện về Bước 1 và ẩn Gói Dùng Thử + Zalo Admin
-                    document.getElementById('step-trial-form').classList.add('hidden');
-                    document.getElementById('step-payment-form').classList.remove('hidden');
-                    document.getElementById('step-countdown').classList.add('hidden');
-                    document.getElementById('timeout-zalo-box').classList.add('hidden');
-                    document.getElementById('input-error-msg').classList.add('hidden');
-
-                    // Cập nhật thông tin gói lên Modal
-                    document.getElementById('modal-plan-title').textContent = planName;
-                    document.getElementById('modal-plan-price').textContent = formattedPrice;
-                    document.getElementById('modal-plan-desc').textContent = descText;
-                    document.getElementById('qr-text-amount').textContent = formattedPrice;
-
-                    // Cập nhật ảnh QR Techcombank
-                    window.updateDynamicQR();
-                    saveSessionToStorage();
-
-                    // Hiển thị Modal
-                    showModalContainer();
-                } catch (err) {
-                    console.error('Lỗi mở thanh toán:', err);
-                }
-            };
-
-            // 2. Hàm đóng Modal Thanh Toán (vẫn lưu trạng thái đếm ngược trong localStorage nếu đang chạy)
-            window.closeCheckout = function () {
-                clearCountdownInterval();
-                if (currentState.stage === 'counting' || currentState.stage === 'expired') {
-                    saveSessionToStorage();
-                } else {
-                    clearSessionStorage();
-                }
-                document.getElementById('timeout-zalo-box').classList.add('hidden');
-                hideModalContainer();
-            };
-
-            // 3. Quay lại màn hình mã QR
+            // Quay lại bước quét mã QR
             window.returnToQR = function () {
-                clearCountdownInterval();
-                currentState.stage = 'form';
-                currentState.endTime = null;
-                clearSessionStorage();
+                clearInterval(countdownInterval);
+                currentOrder.status = 'idle';
+                currentOrder.endTime = null;
+                clearOrderSession();
 
-                document.getElementById('timeout-zalo-box').classList.add('hidden');
                 document.getElementById('step-countdown').classList.add('hidden');
                 document.getElementById('step-payment-form').classList.remove('hidden');
-                window.updateDynamicQR();
-                saveSessionToStorage();
             };
 
-            // 4. Cập nhật nội dung chuyển khoản & mã QR động VietQR Techcombank
-            window.updateDynamicQR = function () {
-                var inputEl = document.getElementById('input-locket-user');
-                var rawVal = inputEl ? inputEl.value.trim() : '';
-                var sanitizedUser = rawVal.replace(/[^a-zA-Z0-9._@-]/g, '');
-                var memo = sanitizedUser ? (currentState.prefix + ' ' + sanitizedUser) : currentState.prefix;
-
-                currentState.username = rawVal;
-                currentState.memo = memo;
-                document.getElementById('qr-text-memo').textContent = memo;
-
-                var encodedMemo = encodeURIComponent(memo);
-                var qrUrl = 'https://img.vietqr.io/image/TCB-9999999995671-compact2.png?amount=' +
-                            currentState.amount +
-                            '&addInfo=' + encodedMemo +
-                            '&accountName=DAO%20DUC%20HAI';
-
-                document.getElementById('vietqr-img').src = qrUrl;
-
-                if (rawVal) {
-                    document.getElementById('input-error-msg').classList.add('hidden');
-                    inputEl.classList.remove('border-rose-500');
-                }
-            };
-
-            // 5. Sao chép nội dung chuyển khoản hiện tại
-            window.copyMemo = function () {
-                var memoText = document.getElementById('qr-text-memo').textContent;
-                window.copyClipboard(memoText, 'Đã sao chép nội dung CK: ' + memoText);
-            };
-
-            // 6. Hàm sao chép văn bản an toàn trên mọi trình duyệt / iFrame
-            window.copyClipboard = function (text, message) {
-                try {
-                    var tempInput = document.createElement('input');
-                    tempInput.value = text;
-                    tempInput.style.position = 'fixed';
-                    tempInput.style.opacity = '0';
-                    document.body.appendChild(tempInput);
-                    tempInput.focus();
-                    tempInput.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(tempInput);
-                    window.showToast(message);
-                } catch (e) {
-                    window.showToast('Không thể sao chép tự động, vui lòng bôi đen để copy.');
-                }
-            };
-
-            // 7. Xác nhận đã chuyển khoản -> Bắt đầu đếm ngược 3 phút (180 giây) và lưu endTime
-            window.confirmTransfer = function () {
-                var inputEl = document.getElementById('input-locket-user');
-                var errorEl = document.getElementById('input-error-msg');
-                var username = inputEl.value.trim();
-
-                if (!username) {
-                    errorEl.classList.remove('hidden');
-                    inputEl.classList.add('border-rose-500');
-                    inputEl.focus();
-                    window.showToast('Vui lòng nhập Username hoặc Email Locket trước!');
-                    return;
-                }
-
-                errorEl.classList.add('hidden');
-                inputEl.classList.remove('border-rose-500');
-
-                window.updateDynamicQR();
-                var memo = document.getElementById('qr-text-memo').textContent;
-                var endTimestamp = Date.now() + WAIT_DURATION_MS;
-
-                startCountdownLoop(endTimestamp, username, memo, currentState.planName);
-            };
-
-            // Khôi phục phiên đếm ngược từ localStorage nếu trang vừa tải lại
-            function restoreSavedCountdownOnLoad() {
-                try {
-                    var raw = localStorage.getItem(STORAGE_KEY);
-                    if (!raw) return;
-                    var saved = JSON.parse(raw);
-                    if (!saved || (saved.stage !== 'counting' && saved.stage !== 'expired')) return;
-
-                    currentState.planName = saved.planName || 'Gói 1 Năm';
-                    currentState.amount = saved.amount || 59000;
-                    currentState.formattedPrice = saved.formattedPrice || '59.000đ';
-                    currentState.descText = saved.descText || 'Thời hạn: 1 Năm (365 ngày)';
-                    currentState.prefix = saved.prefix || 'DHL1N';
-                    currentState.username = saved.username || '';
-                    currentState.memo = saved.memo || currentState.prefix;
-                    currentState.endTime = saved.endTime || null;
-
-                    var inputEl = document.getElementById('input-locket-user');
-                    if (inputEl && currentState.username) {
-                        inputEl.value = currentState.username;
-                    }
-
-                    showModalContainer();
-
-                    if (currentState.endTime && currentState.endTime > Date.now()) {
-                        startCountdownLoop(currentState.endTime, currentState.username, currentState.memo, currentState.planName);
-                    } else {
-                        document.getElementById('summary-plan').textContent = currentState.planName;
-                        document.getElementById('summary-user').textContent = currentState.username || '---';
-                        document.getElementById('summary-memo').textContent = currentState.memo;
-                        document.getElementById('step-payment-form').classList.add('hidden');
-                        document.getElementById('step-countdown').classList.remove('hidden');
-                        renderExpiredState(currentState.memo);
-                    }
-                } catch (e) {
-                    // Bỏ qua nếu dữ liệu lưu trữ không hợp lệ
-                }
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', restoreSavedCountdownOnLoad);
-            } else {
-                restoreSavedCountdownOnLoad();
-            }
-
-            // 8. Đóng / mở FAQ Accordion
+            // Đóng/mở câu hỏi thường gặp (FAQ Accordion)
             window.toggleFaq = function (btn) {
-                var card = btn.parentElement;
-                var isOpen = card.classList.contains('open');
-                var allCards = document.querySelectorAll('.faq-card');
-                for (var i = 0; i < allCards.length; i++) {
-                    allCards[i].classList.remove('open');
-                }
+                const card = btn.closest('.faq-card');
+                if (!card) return;
+                const isOpen = card.classList.contains('open');
+                document.querySelectorAll('.faq-card.open').forEach(item => {
+                    item.classList.remove('open');
+                });
                 if (!isOpen) {
                     card.classList.add('open');
                 }
             };
 
-            // 9. Hiển thị thông báo Toast
-            var toastTimer = null;
-            window.showToast = function (msg) {
-                var toast = document.getElementById('toast-notification');
-                var textEl = document.getElementById('toast-text');
-                textEl.textContent = msg;
-
-                toast.classList.remove('translate-y-24', 'opacity-0');
-                toast.classList.add('translate-y-0', 'opacity-100');
-
-                if (toastTimer) clearTimeout(toastTimer);
-                toastTimer = setTimeout(function () {
-                    toast.classList.add('translate-y-24', 'opacity-0');
-                    toast.classList.remove('translate-y-0', 'opacity-100');
-                }, 3600);
-            };
-
-            // 10. Khởi tạo hiệu ứng chuyển động tương tác (Bong bóng biển sâu, Spotlight chuột, 3D Tilt & Scroll Reveal)
-            function initInteractiveMotion() {
-                var prefersReduced = false;
-                try {
-                    prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                } catch (e) {
-                    prefersReduced = false;
+            // Cảnh báo trình duyệt nếu người dùng định đóng tab khi đang đếm ngược 3 phút
+            window.addEventListener('beforeunload', function (e) {
+                if (currentOrder.status === 'counting' && (currentOrder.endTime - Date.now()) > 0) {
+                    e.preventDefault();
+                    e.returnValue = '';
                 }
+            });
 
-                // Tạo các hạt ánh sáng / bong bóng đại dương bay lên nhẹ nhàng
-                var particleContainer = document.getElementById('ocean-particles');
-                if (particleContainer && !prefersReduced) {
-                    var bubbleCount = window.innerWidth < 640 ? 12 : 22;
-                    for (var b = 0; b < bubbleCount; b++) {
-                        var dot = document.createElement('span');
-                        dot.className = 'ocean-bubble';
-                        var size = (Math.random() * 5 + 3).toFixed(1) + 'px';
-                        dot.style.width = size;
-                        dot.style.height = size;
-                        dot.style.left = (Math.random() * 100).toFixed(2) + '%';
-                        dot.style.setProperty('--dur', (Math.random() * 11 + 11).toFixed(1) + 's');
-                        dot.style.setProperty('--delay', (-Math.random() * 18).toFixed(1) + 's');
-                        dot.style.setProperty('--sway', ((Math.random() - 0.5) * 70).toFixed(0) + 'px');
-                        dot.style.setProperty('--max-op', (Math.random() * 0.45 + 0.25).toFixed(2));
-                        particleContainer.appendChild(dot);
+            // Khởi tạo hiệu ứng đại dương, chuột, 3D tilt, Scroll Reveal & khôi phục phiên đếm ngược
+            document.addEventListener('DOMContentLoaded', function () {
+                // 1. Tạo các hạt bong bóng ánh sáng bay lên
+                const particleContainer = document.getElementById('ocean-particles');
+                if (particleContainer) {
+                    const bubbleCount = window.innerWidth < 640 ? 14 : 24;
+                    for (let i = 0; i < bubbleCount; i++) {
+                        const bubble = document.createElement('span');
+                        bubble.className = 'ocean-bubble';
+                        const size = (Math.random() * 6 + 3).toFixed(1) + 'px';
+                        bubble.style.width = size;
+                        bubble.style.height = size;
+                        bubble.style.left = (Math.random() * 100).toFixed(2) + '%';
+                        bubble.style.setProperty('--dur', (Math.random() * 12 + 10).toFixed(1) + 's');
+                        bubble.style.setProperty('--delay', (-Math.random() * 18).toFixed(1) + 's');
+                        bubble.style.setProperty('--sway', ((Math.random() - 0.5) * 60).toFixed(0) + 'px');
+                        bubble.style.setProperty('--max-op', (Math.random() * 0.45 + 0.25).toFixed(2));
+                        particleContainer.appendChild(bubble);
                     }
                 }
 
-                // Cập nhật ánh sáng Spotlight toàn cục theo tọa độ con trỏ
-                if (!prefersReduced) {
-                    var rafPending = false;
-                    var latestX = window.innerWidth * 0.5;
-                    var latestY = window.innerHeight * 0.3;
+                // 2. Cursor Spotlight theo chuyển động chuột
+                window.addEventListener('pointermove', function (e) {
+                    document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+                    document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+                }, { passive: true });
 
-                    window.addEventListener('pointermove', function (e) {
+                // 3. Hiệu ứng nghiêng 3D (Tilt) & ánh sáng phản chiếu trên các thẻ
+                document.querySelectorAll('.tilt-card').forEach(card => {
+                    card.addEventListener('pointermove', function (e) {
                         if (e.pointerType === 'touch') return;
-                        latestX = e.clientX;
-                        latestY = e.clientY;
-                        if (!rafPending) {
-                            rafPending = true;
-                            requestAnimationFrame(function () {
-                                document.documentElement.style.setProperty('--cursor-x', latestX + 'px');
-                                document.documentElement.style.setProperty('--cursor-y', latestY + 'px');
-                                rafPending = false;
-                            });
-                        }
-                    }, { passive: true });
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        const rotateX = ((y - centerY) / centerY) * -4.5;
+                        const rotateY = ((x - centerX) / centerX) * 4.5;
 
-                    // Hiệu ứng nghiêng 3D & phản chiếu viền trên thẻ Bento và thẻ Gói giá
-                    var tiltCards = document.querySelectorAll('.tilt-card');
-                    for (var t = 0; t < tiltCards.length; t++) {
-                        (function (card) {
-                            card.addEventListener('pointermove', function (e) {
-                                if (e.pointerType === 'touch') return;
-                                var rect = card.getBoundingClientRect();
-                                var relX = e.clientX - rect.left;
-                                var relY = e.clientY - rect.top;
-                                card.style.setProperty('--mx', relX + 'px');
-                                card.style.setProperty('--my', relY + 'px');
-
-                                var normX = (relX / rect.width) - 0.5;
-                                var normY = (relY / rect.height) - 0.5;
-                                var rotateY = (normX * 7).toFixed(2);
-                                var rotateX = (-normY * 7).toFixed(2);
-                                card.style.transform = 'perspective(900px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-5px)';
-                            }, { passive: true });
-
-                            card.addEventListener('pointerleave', function () {
-                                card.style.transform = '';
-                            });
-                        })(tiltCards[t]);
-                    }
-                }
-
-                // Hiệu ứng xuất hiện lần lượt khi cuộn trang (IntersectionObserver)
-                var revealEls = document.querySelectorAll('.reveal-up');
-                if ('IntersectionObserver' in window && !prefersReduced) {
-                    var observer = new IntersectionObserver(function (entries, obs) {
-                        for (var i = 0; i < entries.length; i++) {
-                            if (entries[i].isIntersecting) {
-                                entries[i].target.classList.add('is-visible');
-                                obs.unobserve(entries[i].target);
-                            }
-                        }
-                    }, {
-                        threshold: 0.12,
-                        rootMargin: '0px 0px -30px 0px'
+                        card.style.setProperty('--mx', x + 'px');
+                        card.style.setProperty('--my', y + 'px');
+                        card.style.transform = `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-3px)`;
                     });
 
-                    for (var r = 0; r < revealEls.length; r++) {
-                        observer.observe(revealEls[r]);
-                    }
+                    card.addEventListener('pointerleave', function () {
+                        card.style.transform = '';
+                    });
+                });
+
+                // 4. Hiệu ứng xuất hiện khi cuộn trang (Scroll Reveal)
+                const revealEls = document.querySelectorAll('.reveal-up');
+                if ('IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-visible');
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.12 });
+
+                    revealEls.forEach(el => observer.observe(el));
                 } else {
-                    for (var k = 0; k < revealEls.length; k++) {
-                        revealEls[k].classList.add('is-visible');
+                    revealEls.forEach(el => el.classList.add('is-visible'));
+                }
+
+                // 5. Khôi phục phiên đếm ngược 3 phút nếu khách lỡ F5 / reload trang
+                const saved = loadOrderSession();
+                if (saved && (saved.status === 'counting' || saved.status === 'expired')) {
+                    currentOrder = saved;
+                    const modal = document.getElementById('checkout-modal');
+                    if (modal) {
+                        modal.classList.remove('hidden');
+                        modal.classList.add('flex');
+                        document.body.style.overflow = 'hidden';
+                        enterCountdownView(false);
                     }
                 }
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initInteractiveMotion);
-            } else {
-                initInteractiveMotion();
-            }
+            });
         })();
+    </script>
+
+    <!-- =====================================================================
+         11. KHU VỰC CẤU HÌNH MÃ GIẢM GIÁ (ĐẶT Ở CUỐI FILE ĐỂ DỄ CHỈNH SỬA)
+         Hướng dẫn chỉnh sửa sau này:
+         - Tên mã viết chữ thường (khi khách nhập chữ hoa hay thường đều nhận).
+         - discount: Số tiền giảm trực tiếp (VNĐ), ví dụ 20000 = giảm 20.000đ.
+         - label: Dòng mô tả hiển thị cho khách khi nhập mã thành công.
+         - plans: ['all'] áp dụng cho mọi gói, hoặc ['pro1y'] / ['vip'] cho từng gói.
+         ===================================================================== -->
+    <script>
+        window.DHLOCKET_PROMO_CODES = {
+            'duchai': {
+                discount: 20000,
+                label: 'Giảm 20.000đ',
+                plans: ['all']
+            }
+            // Ví dụ thêm mã giảm giá mới bên dưới (bỏ dấu // ở đầu dòng để kích hoạt):
+            // , 'vip30k': {
+            //     discount: 30000,
+            //     label: 'Giảm 30.000đ cho Gói Vĩnh Viễn',
+            //     plans: ['vip']
+            // }
+        };
     </script>
 </body>
 </html>
